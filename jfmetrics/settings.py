@@ -55,3 +55,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 LANGUAGE_CODE = "pt-br"
 TIME_ZONE = "America/Sao_Paulo"
 USE_TZ = True
+
+# URLs de autenticação (usando suas rotas existentes)
+LOGIN_URL = "login"                 # nome da URL de login (a sua está em path("login/", ... name="login"))
+LOGOUT_REDIRECT_URL = "login"       # após sair, volta pro login
+LOGIN_REDIRECT_URL = "/after-login/"  # após logar, vai para essa rota que você já tem
