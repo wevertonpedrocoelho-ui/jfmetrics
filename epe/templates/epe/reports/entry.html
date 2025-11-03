@@ -1,0 +1,178 @@
+{% extends "epe/base.html" %}
+{% block title %}JF Metrics | Relatórios{% endblock %}
+
+{% block content %}
+
+  {# ===== Cabeçalho ===== #}
+  <div class="mb-6 mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <h1 class="text-xl font-semibold text-slate-800">
+        Relatórios Individuais
+      </h1>
+      <p class="text-sm text-slate-500">
+        {% if is_manager %}
+          Selecione um colaborador para visualizar o dashboard.
+        {% else %}
+          Acesse seu próprio dashboard de relatórios.
+        {% endif %}
+      </p>
+    </div>
+
+    {# Busca só para gestores #}
+    {% if is_manager %}
+      <form method="get" class="w-full sm:w-auto">
+        <div class="flex items-center gap-2">
+          <div class="relative w-full sm:w-80">
+            <i data-lucide="search" class="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"></i>
+            <input
+              type="text"
+              name="q"
+              value="{{ q|default:'' }}"
+              placeholder="Buscar por nome, e-mail ou telefone"
+              class="w-full rounded-xl border border-slate-200 bg-white py-2 pl-9 pr-3 text-sm outline-none focus:border-brand/40 focus:ring-2 focus:ring-brand/30">
+          </div>
+          {% if q %}
+            <a href="{% url 'epe:reports_entry' %}"
+               class="inline-flex items-center rounded-xl border px-3 py-2 text-sm hover:bg-slate-50">
+              Limpar
+            </a>
+          {% endif %}
+          <button class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 text-sm font-medium text-white hover:brightness-110">
+            <i data-lucide="search" class="h-4 w-4"></i>
+            Buscar
+          </button>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+
+  {% if is_manager %}
+    {# ===================== VISÃO GESTOR ===================== #}
+    {% if page_obj.object_list %}
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {% for c in page_obj.object_list %}
+          <article class="group flex h-full flex-col rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm transition hover:-translate-y-[1px] hover:border-brand/40 hover:shadow-md">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-3 min-w-0">
+                {% if c.photo %}
+                  <img src="{{ c.photo.url }}" alt="{{ c.name }}" class="h-12 w-12 rounded-full object-cover border border-slate-200">
+                {% else %}
+                  <div class="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-slate-50">
+                    <i data-lucide="user-round" class="h-6 w-6 text-slate-400"></i>
+                  </div>
+                {% endif %}
+                <div class="min-w-0">
+                  <h2 class="truncate text-[16px] font-semibold leading-snug text-slate-800" title="{{ c.name }}">{{ c.name }}</h2>
+                  <div class="mt-0.5 flex items-center gap-2 text-[13px] text-slate-600">
+                    <i data-lucide="mail" class="h-4 w-4 text-slate-400"></i>
+                    <span class="truncate" title="{{ c.email }}">{{ c.email }}</span>
+                  </div>
+                  {% if c.phone %}
+                    <div class="mt-0.5 flex items-center gap-2 text-[13px] text-slate-600">
+                      <i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>
+                      <span class="truncate" title="{{ c.phone }}">{{ c.phone }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 flex justify-end">
+              <a href="{% url 'epe:collaborator_dashboard' pk=c.pk %}"
+                 class="inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm hover:bg-slate-50">
+                <i data-lucide="bar-chart-3" class="h-4 w-4"></i>
+                Ver
+              </a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      {% if page_obj.paginator.num_pages > 1 %}
+        <nav class="mt-6 flex items-center justify-between">
+          <div class="text-sm text-slate-600">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+          </div>
+          <div class="flex items-center gap-2">
+            {% if page_obj.has_previous %}
+              <a class="inline-flex items-center rounded-lg border px-3 py-2 text-sm hover:bg-slate-50"
+                 href="?{% if q %}q={{ q|urlencode }}&{% endif %}page={{ page_obj.previous_page_number }}">Anterior</a>
+            {% else %}
+              <span class="inline-flex items-center rounded-lg border px-3 py-2 text-sm text-slate-400">Anterior</span>
+            {% endif %}
+            {% if page_obj.has_next %}
+              <a class="inline-flex items-center rounded-lg border px-3 py-2 text-sm hover:bg-slate-50"
+                 href="?{% if q %}q={{ q|urlencode }}&{% endif %}page={{ page_obj.next_page_number }}">Próxima</a>
+            {% else %}
+              <span class="inline-flex items-center rounded-lg border px-3 py-2 text-sm text-slate-400">Próxima</span>
+            {% endif %}
+          </div>
+        </nav>
+      {% endif %}
+    {% else %}
+      <div class="w-full rounded-2xl border border-dashed border-slate-200 bg-white px-6 py-10 text-center shadow-sm">
+        <i data-lucide="inbox" class="mx-auto mb-3 h-6 w-6 text-slate-400"></i>
+        <h3 class="text-lg font-medium text-slate-700">Nenhum colaborador encontrado.</h3>
+        <p class="mt-1 text-sm text-slate-400">Tente ajustar os termos de busca ou limpar os filtros.</p>
+        {% if q %}
+          <div class="mt-4">
+            <a href="{% url 'epe:reports_entry' %}"
+               class="inline-flex items-center rounded-xl border px-3 py-2 text-sm hover:bg-slate-50">
+              Limpar filtros
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+  {% else %}
+    {# ===================== VISÃO COLABORADOR (não gestor) ===================== #}
+    {% with me=request.user.epe_collaborator %}
+      {% if request.user.is_authenticated and me %}
+        <div class="grid grid-cols-1 gap-4 sm:max-w-lg">
+          <article class="group flex h-full flex-col rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm">
+            <div class="flex items-start gap-3">
+              {% if me.photo %}
+                <img src="{{ me.photo.url }}" alt="{{ me.name }}" class="h-12 w-12 rounded-full object-cover border border-slate-200">
+              {% else %}
+                <div class="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-slate-50">
+                  <i data-lucide="user-round" class="h-6 w-6 text-slate-400"></i>
+                </div>
+              {% endif %}
+              <div class="min-w-0">
+                <h2 class="truncate text-[16px] font-semibold leading-snug text-slate-800" title="{{ me.name }}">{{ me.name }}</h2>
+                <div class="mt-0.5 flex items-center gap-2 text-[13px] text-slate-600">
+                  <i data-lucide="mail" class="h-4 w-4 text-slate-400"></i>
+                  <span class="truncate" title="{{ me.email }}">{{ me.email }}</span>
+                </div>
+                {% if me.phone %}
+                  <div class="mt-0.5 flex items-center gap-2 text-[13px] text-slate-600">
+                    <i data-lucide="phone" class="h-4 w-4 text-slate-400"></i>
+                    <span class="truncate" title="{{ me.phone }}">{{ me.phone }}</span>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="mt-4 flex justify-end">
+              <a href="{% url 'epe:collaborator_dashboard' pk=me.pk %}"
+                 class="inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm hover:bg-slate-50">
+                <i data-lucide="bar-chart-3" class="h-4 w-4"></i>
+                Ver
+              </a>
+            </div>
+          </article>
+        </div>
+      {% else %}
+        <div class="w-full rounded-2xl border border-dashed border-slate-200 bg-white px-6 py-10 text-center shadow-sm">
+          <i data-lucide="shield-alert" class="mx-auto mb-3 h-6 w-6 text-slate-400"></i>
+          <h3 class="text-lg font-medium text-slate-700">Sem vínculo de colaborador</h3>
+          <p class="mt-1 text-sm text-slate-400">
+            Sua conta não está vinculada a um colaborador. Fale com o administrador.
+          </p>
+        </div>
+      {% endif %}
+    {% endwith %}
+  {% endif %}
+
+{% endblock %}

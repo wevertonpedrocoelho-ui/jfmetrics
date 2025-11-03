@@ -1,0 +1,187 @@
+﻿{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#499E9D" />
+    <meta name="color-scheme" content="light" />
+
+    <link rel="icon" href="{% static 'favicon.ico' %}" />
+
+    <!-- Tailwind gerado -->
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+
+    <!-- ===== Reset + Scrollbar estável (evita “pulo” de largura) ===== -->
+    <style>
+      /* Reset básico */
+      html, body { margin:0; padding:0; height:100%; }
+
+      /* Garante espaço da barra SEMPRE (fallback universal) */
+      html { overflow-y: scroll; }
+
+      /* Onde suportado, usa scrollbar-gutter e volta ao overflow automático */
+      @supports (scrollbar-gutter: stable both-edges) {
+        html {
+          overflow-y: auto;
+          scrollbar-gutter: stable both-edges;
+        }
+      }
+
+      /* Cobertura adicional caso o body seja o scroll container */
+      body { scrollbar-gutter: stable both-edges; }
+
+      /* Esconde seta nativa dos <select> quando usamos ícone custom */
+      select.appearance-none{
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        appearance:none;
+        background-image:none !important; /* evita reaparecer em alguns temas */
+      }
+      select.appearance-none::-ms-expand{ display:none; } /* Edge/IE legado */
+    </style>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    >
+
+    <!-- libs (defer para não bloquear o paint) -->
+    <script src="https://unpkg.com/htmx.org@1.9.12" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <title>{% block title %}JF Metrics{% endblock %}</title>
+
+    {% block head_extra %}{% endblock %}
+  </head>
+
+  <body class="min-h-screen bg-slate-50 text-ink font-sans">
+    <div class="flex min-h-screen">
+      <!-- Scrim (mobile) -->
+      <div
+        id="scrim"
+        class="fixed inset-0 z-30 hidden bg-black/30 md:hidden"
+        onclick="toggleSidebar()"
+        aria-hidden="true"
+      ></div>
+
+      <!-- Sidebar -->
+      {% block sidebar %}
+        {% include "epe/partial/sidebar.html" %}
+      {% endblock %}
+
+      <!-- Main -->
+      <div class="flex min-w-0 flex-1 flex-col pt-14 md:pl-72">
+        <!-- Header -->
+
+        {% block header %}
+          {% include "epe/partial/header.html" %}
+        {% endblock %}
+
+        <!-- Page -->
+        <main class="flex-1">
+          <div class="mx-auto max-w-7xl px-4 py-4">
+            {% block content %}{% endblock %}
+          </div>
+        </main>
+
+        <!-- Footer -->
+        {% block footer %}
+          {% include "epe/partial/footer.html" %}
+        {% endblock %}
+      </div>
+    </div>
+
+    <!-- ===== Scripts globais ===== -->
+    <script>
+      function toggleSidebar(){
+        const aside = document.getElementById('sidebar');
+        const scrim = document.getElementById('scrim');
+        if (!aside || !scrim) return;
+        const opened = !aside.classList.contains('-translate-x-full');
+        if (opened) {
+          aside.classList.add('-translate-x-full');
+          scrim.classList.add('hidden');
+          aside.setAttribute('aria-hidden', 'true');
+        } else {
+          aside.classList.remove('-translate-x-full');
+          scrim.classList.remove('hidden');
+          aside.removeAttribute('aria-hidden');
+        }
+      }
+
+      function mountIcons(){ if (window.lucide?.createIcons) lucide.createIcons(); }
+
+      // Dropdown do usuário (usa #user-btn e #user-menu do header parcial)
+      (function(){
+        const userBtn = document.getElementById('user-btn');
+        const userMenu = document.getElementById('user-menu');
+
+        function closeMenusOnOutsideClick(e){
+          if (userMenu && !userMenu.classList.contains('hidden')) {
+            const clickedInside = userMenu.contains(e.target) || (userBtn && userBtn.contains(e.target));
+            if (!clickedInside) {
+              userMenu.classList.add('hidden');
+              userBtn?.setAttribute('aria-expanded', 'false');
+            }
+          }
+        }
+        if (userBtn && userMenu) {
+          userBtn.addEventListener('click', (e)=>{
+            e.stopPropagation();
+            const isOpen = !userMenu.classList.contains('hidden');
+            if (isOpen) {
+              userMenu.classList.add('hidden');
+              userBtn.setAttribute('aria-expanded','false');
+            } else {
+              userMenu.classList.remove('hidden');
+              userBtn.setAttribute('aria-expanded','true');
+            }
+          });
+          document.addEventListener('click', closeMenusOnOutsideClick);
+          document.addEventListener('keydown', (e)=>{
+            if (e.key === 'Escape'){
+              userMenu.classList.add('hidden');
+              userBtn?.setAttribute('aria-expanded','false');
+            }
+          });
+        }
+      })();
+
+      // Fecha sidebar no ESC em mobile
+      (function(){
+        document.addEventListener('keydown', (e)=>{
+          if (e.key !== 'Escape') return;
+          const aside = document.getElementById('sidebar');
+          const scrim = document.getElementById('scrim');
+          if (!aside || !scrim) return;
+          const opened = !aside.classList.contains('-translate-x-full');
+          if (opened) toggleSidebar();
+        });
+      })();
+
+      window.addEventListener('load', mountIcons);
+      document.body.addEventListener('htmx:afterSwap', mountIcons);
+    </script>
+
+    {% block extra_js %}{% endblock %}
+  </body>
+
+  <!-- ===== Estilos de impressão base (mantidos aqui para valer em todas as páginas) ===== -->
+  <style media="print">
+    @page { size: A4; margin: 16mm; }
+    /* Esconde elementos de navegação no PDF */
+    #sidebar, header, footer, .fixed, .no-print { display: none !important; }
+    /* Expande o conteúdo para a página */
+    main { max-width: none !important; padding: 0 !important; }
+    /* Evita sombras e bordas muito fortes ao imprimir */
+    .shadow, .shadow-sm, .shadow-md, .shadow-lg { box-shadow: none !important; }
+    .border-slate-200\/70, .border { border-color: #e5e7eb !important; }
+    /* Quebra manual de página quando precisar */
+    .page-break { page-break-before: always; }
+  </style>
+</html>

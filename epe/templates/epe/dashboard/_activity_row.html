@@ -1,0 +1,71 @@
+﻿{% load humanize ui_extras %}
+<div id="row-{{ a.id }}"
+     class="px-4 py-3 grid grid-cols-12 items-center border-b border-slate-100 hover:bg-slate-50/50 transition">
+
+  <!-- Projeto -->
+  <div class="col-span-3 truncate text-slate-800">
+    {{ a.project.name|default:"—" }}
+  </div>
+
+  <!-- Classificação (EPE) -->
+  <div class="col-span-5 text-sm text-slate-600 truncate">
+    <span class="inline-flex items-center gap-1 mr-3">
+      <i data-lucide="layers" class="w-4 h-4 text-slate-400"></i>
+      <b class="text-slate-700">Geral:</b> {{ a.general.name|default:"—" }}
+    </span>
+    <span class="inline-flex items-center gap-1 mr-3">
+      <i data-lucide="square" class="w-4 h-4 text-slate-400"></i>
+      <b class="text-slate-700">Tamanho:</b> {{ a.panel_size.name|default:"—" }}
+    </span>
+    <span class="inline-flex items-center gap-1">
+      <i data-lucide="tag" class="w-4 h-4 text-slate-400"></i>
+      <b class="text-slate-700">Painel:</b> {{ a.panel_name|default:"—" }}
+    </span>
+  </div>
+
+  <!-- Tempo -->
+  <div class="col-span-2 font-mono tabular-nums text-slate-700">
+    {% with secs=a.total_active_seconds %}{{ secs|default:0|hms }}{% endwith %}
+  </div>
+
+  <!-- Ações -->
+  <div class="col-span-2 flex gap-2 justify-end">
+    {% if a.is_active %}
+      <form method="post" action="{% url 'epe:activity_pause' a.id %}">
+        {% csrf_token %}
+        <button type="submit"
+                class="px-3 py-1.5 rounded-lg border text-slate-700 hover:bg-white/60 inline-flex items-center gap-1"
+                title="Pausar">
+          <i data-lucide="pause" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">Pausar</span>
+        </button>
+      </form>
+
+      <form method="post" action="{% url 'epe:activity_finish' a.id %}">
+        {% csrf_token %}
+        <button type="submit"
+                class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white hover:brightness-110 inline-flex items-center gap-1"
+                title="Finalizar">
+          <i data-lucide="check-circle" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">Finalizar</span>
+        </button>
+      </form>
+    {% else %}
+      {% if not a.finished_at %}
+        <form method="post" action="{% url 'epe:activity_resume' a.id %}">
+          {% csrf_token %}
+          <button type="submit"
+                  class="px-3 py-1.5 rounded-lg border text-slate-700 hover:bg-white/60 inline-flex items-center gap-1"
+                  title="Retomar">
+            <i data-lucide="play" class="w-4 h-4"></i>
+            <span class="hidden sm:inline">Retomar</span>
+          </button>
+        </form>
+      {% else %}
+        <span class="text-slate-400 text-sm inline-flex items-center gap-1" title="Concluída">
+          <i data-lucide="badge-check" class="w-4 h-4"></i> Concluída
+        </span>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,352 @@
+﻿{% extends "epe/base.html" %}
+{% block title %}JF Metrics | Dashboard{% endblock %}
+{% block content %}
+{% firstof collab.name colab.name request.user.get_full_name request.user.first_name request.user.username "visitante" as display_name %}
+
+<!-- ===== HERO / HEADER (refinado e responsivo) ===== -->
+<section class="mb-6 rounded-2xl bg-gradient-to-r from-ink to-brand text-white p-4 sm:p-6 shadow">
+  <div class="flex flex-col gap-4 md:flex-row md:items-center">
+
+    <!-- Coluna esquerda: título + navegação de data + hora atual -->
+    <div class="min-w-0 flex-1">
+      <p class="text-xs text-white/80">Engenharia de Painéis Elétricos</p>
+
+      <div class="mt-0.5 flex flex-wrap items-center gap-2">
+        <h1 class="text-xl sm:text-2xl font-semibold leading-tight truncate">
+          {{ display_name }}
+        </h1>
+
+        <!-- Badge com horário atual -->
+        <span class="inline-flex items-center gap-1 rounded-full bg-white/15 px-2 py-1 text-[11px] font-mono">
+          <i data-lucide="clock-3" class="h-3.5 w-3.5"></i>
+          <span data-clock>--:--:--</span>
+        </span>
+      </div>
+
+      <!-- Navegador de data -->
+      <div class="mt-2 flex flex-wrap items-center gap-2">
+        <button type="button"
+                class="grid size-9 place-items-center rounded-lg bg-white/10 hover:bg-white/20"
+                aria-label="Dia anterior" onclick="shiftDay(-1)">
+          <i data-lucide="chevron-left" class="h-4 w-4"></i>
+        </button>
+
+        <input id="day-input" type="date" aria-label="Escolher dia"
+               value="{{ selected_date|date:'Y-m-d' }}"
+               class="w-[10.5rem] sm:w-auto rounded-lg border border-white/20 bg-white/10 px-2 py-1 text-sm text-white/90 focus:outline-none">
+
+        <button type="button"
+                class="grid size-9 place-items-center rounded-lg bg-white/10 hover:bg-white/20 disabled:opacity-30"
+                aria-label="Próximo dia" onclick="shiftDay(1)" {% if not next_date %}disabled{% endif %}>
+          <i data-lucide="chevron-right" class="h-4 w-4"></i>
+        </button>
+
+        <button type="button" class="rounded-lg bg-white px-3 py-1 text-xs text-ink hover:brightness-95"
+                onclick="gotoDay(todayISO())">
+          Hoje
+        </button>
+
+        <span id="day-label"
+              class="ml-1 text-xs text-white/80"
+              data-date="{{ selected_date|date:'Y-m-d' }}">—</span>
+      </div>
+    </div>
+
+    <!-- Coluna direita: ações rápidas -->
+    <div class="md:ml-auto grid w-full grid-cols-1 sm:grid-cols-2 gap-2 md:w-auto md:min-w-[460px]">
+      {# Ação 1: iniciar/encerrar expediente #}
+      <div>
+        {% if is_today %}
+          {% if workday and workday.is_open %}
+            <form method="post" action="{% url 'epe:close_workday' %}">
+              {% csrf_token %}
+              <button type="submit"
+                      class="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-white px-4 py-2 text-ink hover:brightness-95">
+                <i data-lucide="square" class="h-4 w-4"></i>
+                <span>Encerrar expediente</span>
+              </button>
+            </form>
+          {% elif workday and not workday.is_open %}
+            <form method="post" action="{% url 'epe:start_workday' %}">
+              {% csrf_token %}
+              <button type="submit"
+                      class="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-white px-4 py-2 text-ink hover:brightness-95">
+                <i data-lucide="play" class="h-4 w-4"></i>
+                <span>Reabrir expediente</span>
+              </button>
+            </form>
+          {% else %}
+            <form method="post" action="{% url 'epe:start_workday' %}">
+              {% csrf_token %}
+              <button type="submit"
+                      class="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-white px-4 py-2 text-ink hover:brightness-95">
+                <i data-lucide="play" class="h-4 w-4"></i>
+                <span>Iniciar expediente</span>
+              </button>
+            </form>
+          {% endif %}
+        {% else %}
+          <button type="button" disabled
+                  class="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-white/20 px-4 py-2 opacity-60">
+            <i data-lucide="calendar" class="h-4 w-4"></i>
+            <span>Fora do dia atual</span>
+          </button>
+        {% endif %}
+      </div>
+
+      <!-- Ação 2: Nova atividade -->
+      <div>
+        {% if is_today and workday and workday.is_open %}
+          <a href="{% url 'epe:activity_create' %}"
+             class="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-white/10 px-4 py-2 text-white hover:bg-white/20">
+            <i data-lucide="plus" class="h-4 w-4"></i>
+            <span>Nova atividade</span>
+          </a>
+        {% else %}
+          <button type="button" disabled
+                  class="flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-white/10 px-4 py-2 text-white opacity-60">
+            <i data-lucide="plus" class="h-4 w-4"></i>
+            <span>Nova atividade</span>
+          </button>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Faixa de dias (pílulas) -->
+  <div class="-mx-4 mt-4 flex gap-2 overflow-x-auto pb-1 px-4 snap-x snap-mandatory">
+    {% for d in nav_days %}
+      <a href="?date={{ d.iso }}"
+         class="snap-start px-3 py-1.5 rounded-xl border text-sm whitespace-nowrap transition
+                {% if d.is_selected %}bg-white text-ink border-white{% else %}bg-white/10 text-white hover:bg-white/20 border-white/20{% endif %}">
+        {% if d.is_today %}<span class="opacity-80">Hoje •</span> {% endif %}
+        {{ d.label }} {% if d.has_workday %}<span class="opacity-80">•</span>{% endif %}
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ===== KPIs ===== -->
+<section class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-5">
+  <article class="bg-white rounded-2xl shadow p-4 flex items-center gap-3">
+    <span class="inline-flex size-9 rounded-lg bg-brand/15 text-brand items-center justify-center">
+      <i data-lucide="timer" class="w-4 h-4"></i>
+    </span>
+    <div>
+      <div class="text-xs text-slate-500">Tempo total do dia</div>
+      <div class="text-lg sm:text-xl font-semibold tabular-nums"><span id="kpi-total">00:00:00</span></div>
+    </div>
+  </article>
+
+  <article class="bg-white rounded-2xl shadow p-4 flex items-center gap-3">
+    <span class="inline-flex size-9 rounded-lg bg-brand/15 text-brand items-center justify-center">
+      <i data-lucide="activity" class="w-4 h-4"></i>
+    </span>
+    <div>
+      <div class="text-xs text-slate-500">Ativas</div>
+      <div class="text-lg sm:text-xl font-semibold">{{ stats.active }}</div>
+    </div>
+  </article>
+
+  <article class="bg-white rounded-2xl shadow p-4 flex items-center gap-3">
+    <span class="inline-flex size-9 rounded-lg bg-brand/15 text-brand items-center justify-center">
+      <i data-lucide="pause" class="w-4 h-4"></i>
+    </span>
+    <div>
+      <div class="text-xs text-slate-500">Pausadas</div>
+      <div class="text-lg sm:text-xl font-semibold">{{ stats.paused }}</div>
+    </div>
+  </article>
+
+  <article class="bg-white rounded-2xl shadow p-4 flex items-center gap-3">
+    <span class="inline-flex size-9 rounded-lg bg-brand/15 text-brand items-center justify-center">
+      <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+    </span>
+    <div>
+      <div class="text-xs text-slate-500">Concluídas</div>
+      <div class="text-lg sm:text-xl font-semibold">{{ stats.done }}</div>
+    </div>
+  </article>
+</section>
+
+<!-- ===== CONTROLES / FILTRO ===== -->
+<section class="bg-white rounded-2xl shadow p-3 mb-4 sticky top-16 md:top-2 z-20">
+  <div class="flex flex-col gap-3 md:flex-row md:items-center">
+    <label class="relative flex items-center gap-2 flex-1">
+      <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3"></i>
+      <input id="q" type="text" aria-label="Buscar"
+             placeholder="Buscar por projeto, atividade, tamanho do painel, nome do painel ou descrição…"
+             class="w-full border rounded-xl pl-10 pr-3 py-2 text-sm focus:outline-none focus:ring focus:ring-brand/20"
+             oninput="filterCards()">
+    </label>
+
+    <div class="grid grid-cols-2 gap-2 md:flex md:gap-2 md:w-auto">
+      <!-- Projeto -->
+      <label class="relative">
+        <i data-lucide="briefcase" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+        <select id="f_project" aria-label="Filtrar por projeto"
+                class="appearance-none w-full border rounded-xl pl-9 pr-10 py-2 text-sm"
+                onchange="filterCards()">
+          <option value="">Projeto (todos)</option>
+          {% for p in projects %}<option value="{{ p.id }}">{{ p.name }}</option>{% endfor %}
+        </select>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+      </label>
+
+      <!-- Atividade Geral -->
+      <label class="relative">
+        <i data-lucide="layers" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+        <select id="f_general" aria-label="Filtrar por atividade geral"
+                class="appearance-none w-full border rounded-xl pl-9 pr-10 py-2 text-sm"
+                onchange="filterCards()">
+          <option value="">Atividade (todas)</option>
+          {% for g in generals %}<option value="{{ g.id }}">{{ g.name }}</option>{% endfor %}
+        </select>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+      </label>
+
+      <!-- Tamanho do painel -->
+      <label class="relative">
+        <i data-lucide="square" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+        <select id="f_size" aria-label="Filtrar por tamanho do painel"
+                class="appearance-none w-full border rounded-xl pl-9 pr-10 py-2 text-sm"
+                onchange="filterCards()">
+          <option value="">Tamanho (todos)</option>
+          {% for s in panel_sizes %}<option value="{{ s.id }}">{{ s.name }}</option>{% endfor %}
+        </select>
+        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+      </label>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LISTA ===== -->
+<section id="activity-list"
+         class="grid grid-flow-row-dense sm:grid-cols-2 xl:grid-cols-3 gap-3"
+         aria-label="Atividades do dia">{% spaceless %}
+  {% if activities %}
+    {% for a in activities %}
+      {% include "epe/components/activity_card.html" with a=a is_today=is_today %}
+    {% endfor %}
+
+    {# Paginação (opcional e discreta) #}
+    {% if next_url %}
+      <div class="col-span-full mt-2 text-center">
+        <a href="{{ next_url }}" class="inline-block text-sm text-slate-600 hover:text-slate-900 underline underline-offset-4">
+          Carregar mais
+        </a>
+      </div>
+    {% elif page_obj %}
+      {% if page_obj.has_next %}
+        <div class="col-span-full mt-2 text-center">
+          <a href="?page={{ page_obj.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q|urlencode }}{% endif %}{% if request.GET.f_project %}&f_project={{ request.GET.f_project|urlencode }}{% endif %}{% if request.GET.f_general %}&f_general={{ request.GET.f_general|urlencode }}{% endif %}{% if request.GET.f_size %}&f_size={{ request.GET.f_size|urlencode }}{% endif %}"
+             class="inline-block text-sm text-slate-600 hover:text-slate-900 underline underline-offset-4">
+            Carregar mais
+          </a>
+        </div>
+      {% endif %}
+    {% endif %}
+
+  {% else %}
+    <div class="col-span-full rounded-2xl border border-slate-200 bg-white p-8 text-center">
+      <p class="text-slate-500">Sem atividades neste dia.</p>
+      {% if workday and is_today %}
+        <div class="mt-4">
+          <a href="{% url 'epe:activity_create' %}"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand text-white shadow-sm hover:brightness-110 active:translate-y-px transition focus:outline-none focus:ring-2 focus:ring-brand/30 text-sm">
+            <i data-lucide="plus" class="w-4 h-4"></i><span>Nova atividade</span>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}{% endspaceless %}
+</section>
+
+<!-- FAB: Nova atividade (mantém no mobile) -->
+{% if workday %}
+  <a href="{% url 'epe:activity_create' %}"
+     class="fixed bottom-6 right-6 inline-flex items-center gap-2 px-4 py-3 rounded-2xl shadow-lg bg-brand text-white hover:brightness-110 transition">
+    <i data-lucide="plus" class="w-5 h-5"></i> <span class="hidden sm:inline">Nova atividade</span>
+  </a>
+{% endif %}
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  /* ===== Navegação de datas ===== */
+  function todayISO(){
+    const t = new Date();
+    return `${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,'0')}-${String(t.getDate()).padStart(2,'0')}`;
+  }
+  function gotoDay(iso){ window.location = `?date=${iso}`; }
+  function shiftDay(step){
+    const inp = document.getElementById('day-input');
+    if (!inp || !inp.value) return;
+    const d = new Date(inp.value + 'T00:00:00');
+    d.setDate(d.getDate() + step);
+    const next = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    if (next > todayISO()) return; // não avança além de hoje
+    gotoDay(next);
+  }
+  (function mountNiceDate(){
+    const el = document.getElementById('day-label'); if(!el) return;
+    const d = new Date(el.dataset.date + 'T00:00:00');
+    el.textContent = new Intl.DateTimeFormat('pt-BR', {
+      weekday:'long', day:'2-digit', month:'long', year:'numeric'
+    }).format(d);
+  })();
+
+  /* ===== Timer robusto (soma total + timers locais) ===== */
+  const PAGE_EPOCH = Date.now();
+  function fmt(secs){
+    secs = Math.max(0, Math.floor(secs));
+    const h = Math.floor(secs/3600), m = Math.floor((secs%3600)/60), s = secs%60;
+    return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  }
+  function tick(){
+    let total = 0;
+    const delta = Math.floor((Date.now() - PAGE_EPOCH) / 1000);
+    document.querySelectorAll('.timer').forEach(el=>{
+      const base = parseInt(el.dataset.base || '0', 10);
+      const live = el.dataset.live === '1';
+      const val = base + (live ? delta : 0);
+      el.textContent = fmt(val);
+      total += val;
+    });
+    const kpi = document.getElementById('kpi-total');
+    if (kpi) kpi.textContent = fmt(total);
+  }
+  setInterval(tick, 1000);
+  window.addEventListener('load', tick);
+
+  /* ===== Filtro client-side (EPE) ===== */
+  function filterCards(){
+    const q = (document.getElementById('q').value || '').toLowerCase();
+    const pid = document.getElementById('f_project').value;
+    const gid = document.getElementById('f_general').value;
+    const sid = document.getElementById('f_size').value;
+    document.querySelectorAll('.act-card').forEach(card=>{
+      const text = (card.getAttribute('data-text') || '').toLowerCase();
+      const p = card.getAttribute('data-project') || '';
+      const g = card.getAttribute('data-general') || '';
+      const s = card.getAttribute('data-size') || '';
+      const ok = (!q || text.includes(q)) && (!pid || p===pid) && (!gid || g===gid) && (!sid || s===sid);
+      card.classList.toggle('hidden', !ok);
+    });
+  }
+  window.filterCards = filterCards;
+</script>
+
+<script>
+  (function mountClock(){
+    const el = document.querySelector('[data-clock]');
+    if(!el) return;
+    function tick(){
+      el.textContent = new Date().toLocaleTimeString('pt-BR', { hour12: false });
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
+{% endblock %}

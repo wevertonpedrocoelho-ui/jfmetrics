@@ -1,0 +1,152 @@
+﻿{% extends "epe/base.html" %}
+{% block title %}JF Metrics | Nova Atividade (EPE){% endblock %}
+
+{% block content %}
+{% with ns=request.resolver_match.namespace|default:'epe' %}
+<div class="max-w-5xl mx-auto">
+  <div class="mb-4">
+    <a href="{% url ns|add:':dashboard' %}" class="text-sm text-slate-500 hover:text-slate-700 inline-flex items-center gap-1">
+      <i data-lucide="arrow-left" class="w-4 h-4"></i> Voltar ao dashboard
+    </a>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow p-6">
+    <h1 class="text-xl font-semibold mb-5 flex items-center gap-2">
+      <i data-lucide="plus-circle" class="w-5 h-5 text-slate-600"></i> Nova atividade
+    </h1>
+
+    {# erros gerais #}
+    {% if form.non_field_errors %}
+      <div class="mb-4 rounded-xl border border-rose-200 bg-rose-50 p-3 text-rose-700 text-sm">
+        {% for error in form.non_field_errors %}
+          <div class="flex items-start gap-2">
+            <i data-lucide="alert-triangle" class="w-4 h-4 mt-0.5"></i>
+            <span>{{ error }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'epe:activity_create' %}" class="space-y-6" novalidate>
+      {% csrf_token %}
+
+      <!-- Projeto (opcional) -->
+      <div>
+        <label class="block">
+          <span class="text-sm text-slate-700">Projeto</span>
+          <div class="relative mt-1">
+            <i data-lucide="briefcase" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            {{ form.project }}
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+          </div>
+        </label>
+        {% if form.project.errors %}
+          <div class="mt-1 text-sm text-rose-600">
+            {% for error in form.project.errors %}<div>• {{ error }}</div>{% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Classificação (EPE) -->
+      <div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-medium text-slate-700">Classificação</span>
+          <span class="text-[11px] text-slate-500">Selecione a atividade geral, o tamanho e nomeie o painel</span>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4 mt-2">
+          <!-- Atividade Geral -->
+          <label class="block">
+            <span class="text-sm text-slate-600">Atividade Geral</span>
+            <div class="relative mt-1">
+              <i data-lucide="layers" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              {{ form.general }}
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            </div>
+            {% if form.general.errors %}
+              <div class="mt-1 text-sm text-rose-600">{% for error in form.general.errors %}<div>• {{ error }}</div>{% endfor %}</div>
+            {% endif %}
+          </label>
+
+          <!-- Tamanho do painel -->
+          <label class="block">
+            <span class="text-sm text-slate-600">Tamanho do painel</span>
+            <div class="relative mt-1">
+              <i data-lucide="square" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              {{ form.panel_size }}
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            </div>
+            {% if form.panel_size.errors %}
+              <div class="mt-1 text-sm text-rose-600">{% for error in form.panel_size.errors %}<div>• {{ error }}</div>{% endfor %}</div>
+            {% endif %}
+          </label>
+
+          <!-- Nome do painel -->
+          <label class="block">
+            <span class="text-sm text-slate-600">Nome do painel</span>
+            <div class="relative mt-1">
+              <i data-lucide="tag" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              {{ form.panel_name }}
+            </div>
+            {% if form.panel_name.errors %}
+              <div class="mt-1 text-sm text-rose-600">{% for error in form.panel_name.errors %}<div>• {{ error }}</div>{% endfor %}</div>
+            {% endif %}
+          </label>
+        </div>
+      </div>
+
+      <!-- Descrição -->
+      <div>
+        <label class="block">
+          <span class="text-sm text-slate-700">Descrição</span>
+          {{ form.description }}
+        </label>
+        {% if form.description.errors %}
+          <div class="mt-1 text-sm text-rose-600">
+            {% for error in form.description.errors %}<div>• {{ error }}</div>{% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Ações -->
+      <div class="flex flex-wrap gap-2">
+        <button type="submit"
+                class="px-4 py-2 rounded-xl bg-brand text-white flex items-center gap-2 hover:brightness-110 transition focus:outline-none focus:ring-2 focus:ring-emerald-300 js-submit-btn">
+          <i data-lucide="play" class="w-4 h-4"></i> Iniciar e salvar
+        </button>
+        <a href="{% url ns|add:':dashboard' %}" class="px-4 py-2 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 transition">
+          Cancelar
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endwith %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  // Ícones + proteção contra duplo submit e foco inteligente
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.lucide) lucide.createIcons();
+
+    const form = document.querySelector('form');
+    const btn  = document.querySelector('.js-submit-btn');
+
+    // Desabilita o botão SOMENTE após o submit iniciar (não bloqueia o envio)
+    if (form && btn) {
+      form.addEventListener('submit', () => {
+        btn.disabled = true;
+        btn.classList.add('opacity-70','cursor-not-allowed');
+      });
+    }
+
+    // Autofocus no primeiro campo vazio, priorizando "Nome do painel"
+    const order = ['id_panel_name','id_general','id_panel_size','id_project'];
+    for (const id of order) {
+      const el = document.getElementById(id);
+      if (el && (!el.value || el.value === '')) { try { el.focus(); } catch(e){} break; }
+    }
+  });
+</script>
+{% endblock %}

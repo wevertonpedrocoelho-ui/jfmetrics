@@ -1,0 +1,121 @@
+{% url 'epe:dashboard' as dashboard_url %}
+{% url 'epe:project_list' as project_list_url %}
+{% url 'epe:catalogs' as eap_url %}
+{% url 'epe:collaborator_list' as collaborator_list_url %}
+{% url 'epe:reports_entry' as reports_entry_url %}
+{% url 'epe:realtime' as realtime_url %}
+{% url 'epe:department_report' as department_report_url %}
+{% url 'epe:settings' as settings_url %}
+
+{% with curr=request.resolver_match.url_name ns=request.resolver_match.namespace %}
+<aside id="sidebar"
+  class="fixed inset-y-0 left-0 z-40 w-72 -translate-x-full md:translate-x-0
+         md:inset-y-0 md:left-0 bg-white border-r shadow-sm
+         transition-transform duration-200 will-change-transform">
+
+  <div class="border-b p-4 flex items-center gap-3">
+    <span class="inline-flex size-10 items-center justify-center rounded-xl bg-brand text-white">
+      <i data-lucide="chart-no-axes-combined" class="w-6 h-6" aria-hidden="true"></i>
+      <span class="sr-only">JF Metrics</span>
+    </span>
+    <div class="min-w-0">
+      <div class="font-semibold leading-tight">JF Metrics</div>
+      <div class="text-xs text-slate-500 truncate">Engenharia de Painéis Elétricos</div>
+    </div>
+  </div>
+
+  <nav class="p-3 space-y-1 text-sm">
+    {# Dashboard #}
+    <a href="{{ dashboard_url|default:'/epe/' }}"
+       class="group relative flex items-center gap-3 px-3 py-2 rounded-lg transition-colors duration-200
+              hover:bg-brand/10 hover:text-brand
+              after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-5 after:w-1 after:rounded-full after:transition-colors after:duration-200
+              {% if ns == 'epe' and curr == 'dashboard' %} bg-brand/10 text-brand after:bg-brand {% else %} after:bg-transparent group-hover:after:bg-brand/60 {% endif %}"
+       {% if ns == 'epe' and curr == 'dashboard' %}aria-current="page"{% endif %}>
+      <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+      <span>Dashboard</span>
+    </a>
+
+    {# Projetos #}
+    <a href="{{ project_list_url|default:'/epe/projetos/' }}"
+       class="group relative flex items-center gap-3 px-3 py-2 rounded-lg transition-colors duration-200
+              hover:bg-brand/10 hover:text-brand
+              after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-5 after:w-1 after:rounded-full after:transition-colors after:duration-200
+              {% if ns == 'epe' and curr == 'project_list' %} bg-brand/10 text-brand after:bg-brand {% else %} after:bg-transparent group-hover:after:bg-brand/60 {% endif %}"
+       {% if ns == 'epe' and curr == 'project_list' %}aria-current="page"{% endif %}>
+      <i data-lucide="briefcase" class="w-4 h-4"></i>
+      <span>Projetos</span>
+    </a>
+
+    {# EAP (catálogos) #}
+    <a href="{{ eap_url|default:'/epe/catalogos/' }}"
+       class="group relative flex items-center gap-3 px-3 py-2 rounded-lg transition-colors duration-200
+              hover:bg-brand/10 hover:text-brand
+              after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-5 after:w-1 after:rounded-full after:transition-colors after:duration-200
+              {% if ns == 'epe' and curr == 'catalogs' or ns == 'epe' and curr == 'general_list' or ns == 'epe' and curr == 'size_list' %} bg-brand/10 text-brand after:bg-brand {% else %} after:bg-transparent group-hover:after:bg-brand/60 {% endif %}"
+       {% if ns == 'epe' and curr == 'catalogs' or ns == 'epe' and curr == 'general_list' or ns == 'epe' and curr == 'size_list' %}aria-current="page"{% endif %}>
+      <i data-lucide="git-branch" class="w-4 h-4"></i>
+      <span>EAP</span>
+    </a>
+
+    {# Colaboradores #}
+    <a href="{{ collaborator_list_url|default:'/epe/colaboradores/' }}"
+       class="group relative flex items-center gap-3 px-3 py-2 rounded-lg transition-colors duration-200
+              hover:bg-brand/10 hover:text-brand
+              after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-5 after:w-1 after:rounded-full after:transition-colors after:duration-200
+              {% if ns == 'epe' and curr == 'collaborator_list' %} bg-brand/10 text-brand after:bg-brand {% else %} after:bg-transparent group-hover:after:bg-brand/60 {% endif %}"
+       {% if ns == 'epe' and curr == 'collaborator_list' %}aria-current="page"{% endif %}>
+      <i data-lucide="users" class="w-4 h-4"></i>
+      <span>Colaboradores</span>
+    </a>
+
+    {# Relatórios Individuais #}
+    <a href="{{ reports_entry_url|default:'/epe/relatorios/' }}"
+       class="group relative flex items-center gap-3 px-3 py-2 rounded-lg transition-colors duration-200
+              hover:bg-brand/10 hover:text-brand
+              after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-5 after:w-1 after:rounded-full after:transition-colors after:duration-200
+              {% if ns == 'epe' and curr == 'reports_entry' or ns == 'epe' and curr == 'collaborator_dashboard' %} bg-brand/10 text-brand after:bg-brand {% else %} after:bg-transparent group-hover:after:bg-brand/60 {% endif %}"
+       {% if ns == 'epe' and curr == 'reports_entry' or ns == 'epe' and curr == 'collaborator_dashboard' %}aria-current="page"{% endif %}>
+      <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+      <span>Relatórios Individuais</span>
+    </a>
+
+    {# ================== Itens EXTRA para Gestor ================== #}
+    {% if is_manager %}
+      <a href="{{ realtime_url|default:'/epe/tempo-real/' }}"
+         class="group relative flex items-center gap-3 px-3 py-2 rounded-lg transition-colors duration-200
+                hover:bg-brand/10 hover:text-brand
+                after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-5 after:w-1 after:rounded-full after:transition-colors after:duration-200
+                {% if ns == 'epe' and curr == 'realtime' %} bg-brand/10 text-brand after:bg-brand {% else %} after:bg-transparent group-hover:after:bg-brand/60 {% endif %}"
+         {% if ns == 'epe' and curr == 'realtime' %}aria-current="page"{% endif %}>
+        <i data-lucide="activity" class="w-4 h-4"></i>
+        <span>Tempo Real</span>
+      </a>
+
+      <a href="{{ department_report_url|default:'/epe/relatorios/geral/' }}"
+         class="group relative flex items-center gap-3 px-3 py-2 rounded-lg transition-colors duration-200
+                hover:bg-brand/10 hover:text-brand
+                after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2 after:h-5 after:w-1 after:rounded-full after:transition-colors after:duration-200
+                {% if ns == 'epe' and curr == 'department_report' %} bg-brand/10 text-brand after:bg-brand {% else %} after:bg-transparent group-hover:after:bg-brand/60 {% endif %}"
+         {% if ns == 'epe' and curr == 'department_report' %}aria-current="page"{% endif %}>
+        <i data-lucide="file-bar-chart-2" class="w-4 h-4"></i>
+        <span>Relatório Geral</span>
+      </a>
+    {% endif %}
+
+    {# Configurações #}
+    <a href="{{ settings_url|default:'/epe/configuracao/' }}"
+       class="group relative flex items-center gap-3 px-3 py-2 rounded-lg transition-colors duration-200
+              hover:bg-slate-50
+              {% if ns == 'epe' and curr == 'settings' %}bg-slate-100 font-medium text-ink{% endif %}"
+       {% if ns == 'epe' and curr == 'settings' %}aria-current="page"{% endif %}>
+      <span aria-hidden="true"
+            class="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-1 rounded-full
+                   {% if ns == 'epe' and curr == 'settings' %}bg-brand{% else %}bg-transparent{% endif %}"></span>
+      <i data-lucide="settings"
+         class="w-4 h-4 {% if ns == 'epe' and curr == 'settings' %}text-brand{% else %}text-slate-600{% endif %}"></i>
+      <span>Configurações</span>
+    </a>
+  </nav>
+</aside>
+{% endwith %}

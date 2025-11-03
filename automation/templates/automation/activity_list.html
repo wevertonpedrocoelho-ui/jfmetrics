@@ -1,0 +1,28 @@
+﻿{% if activities %}
+  {% for a in activities %}
+    {% include "components/activity_card.html" with a=a is_today=is_today %}
+  {% endfor %}
+
+  {% if next_url %}
+    <div class="col-span-full mt-2 text-center">
+      <a href="{{ next_url }}" class="inline-block text-sm text-slate-600 hover:text-slate-900 underline underline-offset-4">Carregar mais</a>
+    </div>
+  {% elif page_obj %}
+    {% if page_obj.has_next %}
+      <div class="col-span-full mt-2 text-center">
+        <a href="?page={{ page_obj.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q|urlencode }}{% endif %}{% if request.GET.f_project %}&f_project={{ request.GET.f_project|urlencode }}{% endif %}{% if request.GET.f_milestone %}&f_milestone={{ request.GET.f_milestone|urlencode }}{% endif %}" class="inline-block text-sm text-slate-600 hover:text-slate-900 underline underline-offset-4">Carregar mais</a>
+      </div>
+    {% endif %}
+  {% endif %}
+{% else %}
+  <div class="col-span-full rounded-xl border border-slate-200 bg-white p-8 text-center">
+    <p class="text-slate-500">Sem atividades neste dia.</p>
+    {% if workday and is_today %}
+      <div class="mt-4">
+        <a href="{% url 'automation:activity_create' %}" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand text-white shadow-sm hover:brightness-110 active:translate-y-px transition focus:outline-none focus:ring-2 focus:ring-brand/30 text-sm">
+          <i data-lucide="plus" class="w-4 h-4"></i><span>Nova atividade</span>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

@@ -1,0 +1,36 @@
+{# --- FOOTER --- #}
+{% block footer %}
+<footer class="mt-4 border-t bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+
+      <!-- Identidade -->
+      <div class="flex items-center gap-3 min-w-0">
+<span class="inline-flex size-10 rounded-xl bg-brand text-white items-center justify-center">
+  <i data-lucide="chart-no-axes-combined" class="w-6 h-6" aria-hidden="true"></i>
+  <span class="sr-only">JF Metrics</span>
+</span>
+        <div class="min-w-0">
+          <div class="text-sm font-semibold text-slate-800 truncate">JF Metrics</div>
+          <div class="text-xs text-slate-500">
+            © {% now "Y" %} JF Energia e Automação — Todos os direitos reservados
+          </div>
+        </div>
+      </div>
+
+      <!-- Versão / topo -->
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-slate-500">
+          Versão {{ app_version|default:"0.1.0" }}
+        </span>
+        <a href="#"
+           class="inline-flex items-center gap-1 rounded-lg border px-2.5 py-1.5 text-xs hover:bg-slate-50"
+           onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
+          <i data-lucide="arrow-up" class="w-4 h-4"></i> Topo
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+{% endblock %}

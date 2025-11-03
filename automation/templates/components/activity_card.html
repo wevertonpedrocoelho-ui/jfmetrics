@@ -1,0 +1,110 @@
+<article class="act-card group flex h-full flex-col rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm transition
+         hover:-translate-y-[1px] hover:border-brand/40 hover:shadow-md focus-within:ring-2 focus-within:ring-brand/30"
+  data-text="{{ a.project|default:'' }} {{ a.eap_display|default:'' }} {{ a.description|default:'' }}"
+  data-project="{{ a.project_id|default:'' }}"
+  data-milestone="{{ a.milestone_id|default:'' }}"
+  data-active="{% if a.is_active and not a.finished_at %}1{% else %}0{% endif %}"
+>
+  {# --- TOPO: Projeto + tempo --- #}
+  <div class="flex items-center justify-between gap-3 min-h-[28px]">
+    <span
+      class="inline-flex items-center gap-1 rounded-md bg-slate-100 px-2 py-0.5 text-[13px] text-slate-700 max-w-[280px] overflow-hidden"
+      title="{% if a.project %}{{ a.project.name }}{% else %}Sem projeto{% endif %}"
+    >
+      <i data-lucide="briefcase" class="h-3.5 w-3.5 shrink-0"></i>
+      <span class="truncate min-w-0">
+        {% if a.project %}{{ a.project.name }}{% else %}Sem projeto{% endif %}
+      </span>
+    </span>
+
+    <div class="shrink-0 text-right leading-none">
+      <div class="text-xs text-slate-500">Tempo</div>
+      <div class="font-mono text-[15px] font-semibold tabular-nums">
+        <span class="timer"
+              data-base="{{ a.total_active_seconds|default:0 }}"
+              data-live="{% if a.is_active and not a.finished_at %}1{% else %}0{% endif %}">
+          00:00:00
+        </span>
+      </div>
+    </div>
+  </div>
+
+  {# --- Título (2 linhas) + Status --- #}
+  <div class="mt-2 flex items-start justify-between gap-3">
+    <h3 class="min-h-[40px] flex-1 text-[15px] font-medium leading-snug line-clamp-2"
+        title="{{ a.eap_display }}">
+      {{ a.eap_display }}
+    </h3>
+
+    {% if a.finished_at %}
+      <span class="inline-flex items-center gap-1 whitespace-nowrap rounded-md border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-emerald-700 text-[13px]">
+        <i data-lucide="check-circle-2" class="h-4 w-4"></i> Concluída
+      </span>
+    {% elif a.is_active %}
+      <span class="inline-flex items-center gap-1 whitespace-nowrap rounded-md border border-sky-200 bg-sky-50 px-2 py-0.5 text-sky-700 text-[13px]">
+        <i data-lucide="play-circle" class="h-4 w-4"></i> Em andamento
+      </span>
+    {% else %}
+      <span class="inline-flex items-center gap-1 whitespace-nowrap rounded-md border border-amber-200 bg-amber-50 px-2 py-0.5 text-amber-700 text-[13px]">
+        <i data-lucide="pause-circle" class="h-4 w-4"></i> Pausada
+      </span>
+    {% endif %}
+  </div>
+
+  {# --- Descrição (1 linha) --- #}
+  {% if a.description %}
+    <p class="mt-2 min-h-[20px] truncate text-sm text-slate-600" title="{{ a.description }}">{{ a.description }}</p>
+  {% else %}
+    <div class="mt-1 min-h-[20px]"></div>
+  {% endif %}
+
+  {# --- Hierarquia (badges) --- #}
+  <div class="mt-3 flex flex-wrap gap-2 text-[12px]">
+    {% if a.milestone %}<span class="max-w-[350px] truncate rounded-full bg-slate-100 px-3 py-1 text-slate-700" title="{{ a.milestone.name }}">{{ a.milestone.name }}</span>{% endif %}
+    {% if a.general %}<span class="max-w-[350px] truncate rounded-full bg-slate-100 px-3 py-1 text-slate-700" title="{{ a.general.name }}">{{ a.general.name }}</span>{% endif %}
+    {% if a.specific %}<span class="max-w-[350px] truncate rounded-full bg-slate-100 px-3 py-1 text-slate-700" title="{{ a.specific.name }}">{{ a.specific.name }}</span>{% endif %}
+  </div>
+
+  <div class="mt-6"></div>
+
+  {# --- RODAPÉ --- #}
+  <div class="mt-auto border-t border-slate-200/80 pt-4 pb-1">
+    <div class="flex items-center justify-between gap-3 h-10">
+      <div class="flex items-center gap-2 h-10">
+        <i data-lucide="clock" class="h-4 w-4"></i>
+        <span class="text-xs leading-none text-slate-600">
+          Início: {{ a.started_at|date:"H:i" }}
+          {% if a.finished_at %} • Fim: {{ a.finished_at|date:"H:i" }}{% endif %}
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2 h-10">
+        {% if not a.finished_at %}
+          {% if a.is_active %}
+            <form method="post" action="{% url 'automation:activity_pause' a.id %}">{% csrf_token %}
+              <button class="inline-flex h-10 items-center gap-1 rounded-lg border px-3 hover:bg-slate-50">
+                <i data-lucide="pause" class="h-4 w-4"></i><span class="text-sm">Pausar</span>
+              </button>
+            </form>
+          {% else %}
+            <form method="post" action="{% url 'automation:activity_resume' a.id %}">{% csrf_token %}
+              <button class="inline-flex h-10 items-center gap-1 rounded-lg border px-3 hover:bg-slate-50">
+                <i data-lucide="play" class="h-4 w-4"></i><span class="text-sm">Retomar</span>
+              </button>
+            </form>
+          {% endif %}
+
+          <form method="post" action="{% url 'automation:activity_finish' a.id %}">{% csrf_token %}
+            <button class="inline-flex h-10 items-center gap-1 rounded-lg bg-emerald-600 px-3 text-white hover:brightness-110">
+              <i data-lucide="check" class="h-4 w-4"></i><span class="text-sm">Concluir</span>
+            </button>
+          </form>
+        {% else %}
+          <span class="inline-flex h-10 items-center rounded-lg border border-emerald-200 bg-emerald-50 px-3 text-sm text-emerald-700">
+            Concluída em {{ a.finished_at|date:"d/m H:i" }}
+          </span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>

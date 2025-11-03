@@ -1,0 +1,488 @@
+{# automation/templates/reports/global_dashboard.html #}
+{% extends 'automation/base.html' %}
+{% load static %}
+{% block title %}JF Metrics | Relatório Geral{% endblock %}
+
+{% block head_extra %}
+<style>
+  @page { size: A4; margin: 12mm; }
+
+  @media print {
+    /* mostra só o conteúdo-alvo */
+    body * { visibility: hidden !important; }
+    .print-area, .print-area * { visibility: visible !important; }
+
+    /* layout limpo na impressão */
+    .print-area { position: static !important; max-width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; }
+    .shadow, .shadow-sm, .shadow-md, .shadow-lg { box-shadow: none !important; }
+    body { background: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    /* nunca imprimir nav/overlays etc. */
+    #sidebar, header, footer, #scrim, .no-print { display: none !important; }
+
+    /* evita quebra no meio */
+    section, article, .rounded-2xl { break-inside: avoid; page-break-inside: avoid; }
+
+    /* charts responsivos no papel */
+    canvas { max-width: 100% !important; height: auto !important; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mx-auto max-w-7xl print-area">
+
+  {# ============== Cabeçalho ============== #}
+  <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6">
+    <div class="min-w-0">
+      <h1 class="text-lg font-semibold text-slate-800 sm:text-xl">Relatório Geral do Departamento</h1>
+      <div class="text-sm text-slate-600">
+        Período: {{ date_from|date:"d/m/Y" }} — {{ date_to|date:"d/m/Y" }}
+      </div>
+    </div>
+
+    <div class="no-print mt-3 flex flex-wrap items-center gap-2 sm:mt-0">
+      <div class="inline-flex flex-wrap gap-2">
+        <button type="button" class="rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50" onclick="presetRange('today')">Hoje</button>
+        <button type="button" class="rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50" onclick="presetRange('last7')">Últimos 7</button>
+        <button type="button" class="rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50" onclick="presetRange('month')">Mês atual</button>
+        <button type="button" class="rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50" onclick="presetRange('last30')">Últimos 30</button>
+      </div>
+
+      <button type="button"
+              onclick="window.print()"
+              class="inline-flex items-center gap-2 rounded-xl bg-brand px-3 py-1.5 text-xs font-medium text-white hover:brightness-110">
+        <i data-lucide="printer" class="h-4 w-4"></i> Imprimir / PDF
+      </button>
+
+      {# ===== Exportar XLSX (reaproveitando os filtros do form) ===== #}
+      {% url 'automation:global_report_xlsx' as xlsx_url %}
+      {% if xlsx_url %}
+        <button type="submit"
+                form="filter-form" formmethod="get" formaction="{{ xlsx_url }}"
+                class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:brightness-110">
+          <i data-lucide="table-2" class="h-4 w-4"></i> Exportar XLSX
+        </button>
+      {% else %}
+        {# fallback caso a URL nomeada ainda não exista #}
+        <button type="submit"
+                form="filter-form" formmethod="get" formaction="?export=xlsx"
+                class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:brightness-110">
+          <i data-lucide="table-2" class="h-4 w-4"></i> Exportar XLSX
+        </button>
+      {% endif %}
+    </div>
+  </div>
+
+  {# ============== Filtros ============== #}
+  <form id="filter-form" method="get" class="no-print mb-6 rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm">
+    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-6">
+      <div>
+        <label class="mb-1 block text-xs text-slate-500">De</label>
+        <input type="date" name="de" value="{{ date_from|date:'Y-m-d' }}"
+               class="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm focus:border-brand/40 focus:ring-2 focus:ring-brand/30">
+      </div>
+      <div>
+        <label class="mb-1 block text-xs text-slate-500">Até</label>
+        <input type="date" name="ate" value="{{ date_to|date:'Y-m-d' }}"
+               class="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm focus:border-brand/40 focus:ring-2 focus:ring-brand/30">
+      </div>
+
+      <div class="lg:col-span-2">
+        <label class="mb-1 block text-xs text-slate-500">Presets rápidos</label>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" class="rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50" onclick="presetRange('today')">Hoje</button>
+          <button type="button" class="rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50" onclick="presetRange('last7')">Últimos 7</button>
+          <button type="button" class="rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50" onclick="presetRange('month')">Mês atual</button>
+          <button type="button" class="rounded-xl border px-3 py-1.5 text-xs hover:bg-slate-50" onclick="presetRange('last30')">Últimos 30</button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 flex items-end gap-2">
+        <a href="?de={{ date_from|date:'Y-m-01' }}&ate={{ date_to|date:'Y-m-t' }}"
+           class="inline-flex w-1/2 items-center justify-center rounded-xl border px-3 py-2 text-sm hover:bg-slate-50">Limpar</a>
+        <button class="inline-flex w-1/2 items-center justify-center gap-2 rounded-xl bg-brand px-4 py-2 text-sm font-medium text-white hover:brightness-110">
+          <i data-lucide="filter" class="h-4 w-4"></i> Aplicar
+        </button>
+      </div>
+    </div>
+
+    {# --- Avançados recolhidos por padrão --- #}
+    <details id="adv-filters" class="no-print mt-4 mb-4 rounded-2xl border border-slate-200/70 bg-white shadow-sm group">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
+        <div class="flex items-center gap-2">
+          <i data-lucide="sliders-horizontal" class="h-4 w-4 text-slate-500"></i>
+          <span class="text-sm font-medium text-slate-700">Filtros avançados</span>
+          <span id="adv-count" class="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600">nenhum ativo</span>
+        </div>
+        <i data-lucide="chevron-down" class="h-5 w-5 text-slate-400 transition-transform duration-200 group-open:rotate-180"></i>
+      </summary>
+
+      <div class="border-t border-slate-100 px-4 py-4">
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+
+          {% if collaborator_opts is not None %}
+          <div>
+            <div class="mb-1 flex items-center justify-between">
+              <label class="text-xs text-slate-500">Colaborador(es)
+                <span id="count-collab" class="ml-1 inline-block min-w-5 rounded bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600 text-center">{{ filt_collaborators|length|default:0 }}</span>
+              </label>
+              <div class="hidden sm:flex gap-2 text-[11px] text-slate-500">
+                <button type="button" class="underline hover:text-slate-700" onclick="selectAll('sel-collab', true); refreshAdvBadge();">Selecionar todos</button>
+                <button type="button" class="underline hover:text-slate-700" onclick="selectAll('sel-collab', false); refreshAdvBadge();">Limpar</button>
+              </div>
+            </div>
+            <div class="relative">
+              <select id="sel-collab" name="collaborator" multiple
+                      class="appearance-none w-full h-36 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"
+                      onchange="updateCount('sel-collab','count-collab'); refreshAdvBadge();">
+                {% for o in collaborator_opts %}
+                  <option value="{{ o.id }}" {% if o.id in filt_collaborators %}selected{% endif %}>{{ o.name }}</option>
+                {% endfor %}
+              </select>
+              <i data-lucide="chevron-down" class="pointer-events-none absolute right-3 top-3 h-4 w-4 text-slate-400"></i>
+            </div>
+            <div class="mt-1 text-[11px] text-slate-500 sm:hidden">
+              <button type="button" class="underline" onclick="selectAll('sel-collab', true); refreshAdvBadge();">Selecionar todos</button> ·
+              <button type="button" class="underline" onclick="selectAll('sel-collab', false); refreshAdvBadge();">Limpar</button>
+            </div>
+          </div>
+          {% endif %}
+
+          {# Projetos #}
+          <div>
+            <div class="mb-1 flex items-center justify-between">
+              <label class="text-xs text-slate-500">Projeto(s)
+                <span id="count-project" class="ml-1 inline-block min-w-5 rounded bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600 text-center">{{ filt_projects|length|default:0 }}</span>
+              </label>
+              <div class="hidden sm:flex gap-2 text-[11px] text-slate-500">
+                <button type="button" class="underline hover:text-slate-700" onclick="selectAll('sel-project', true); refreshAdvBadge();">Selecionar todos</button>
+                <button type="button" class="underline hover:text-slate-700" onclick="selectAll('sel-project', false); refreshAdvBadge();">Limpar</button>
+              </div>
+            </div>
+            <div class="relative">
+              <select id="sel-project" name="project" multiple
+                      class="appearance-none w-full h-36 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"
+                      onchange="updateCount('sel-project','count-project'); refreshAdvBadge();">
+                {% for o in project_opts %}
+                  <option value="{{ o.id }}" {% if o.id in filt_projects %}selected{% endif %}>{{ o.name }}</option>
+                {% endfor %}
+              </select>
+              <i data-lucide="chevron-down" class="pointer-events-none absolute right-3 top-3 h-4 w-4 text-slate-400"></i>
+            </div>
+            <div class="mt-1 text-[11px] text-slate-500 sm:hidden">
+              <button type="button" class="underline" onclick="selectAll('sel-project', true); refreshAdvBadge();">Selecionar todos</button> ·
+              <button type="button" class="underline" onclick="selectAll('sel-project', false); refreshAdvBadge();">Limpar</button>
+            </div>
+          </div>
+
+          {# Marcos #}
+          <div>
+            <div class="mb-1 flex items-center justify-between">
+              <label class="text-xs text-slate-500">Marco(s)
+                <span id="count-milestone" class="ml-1 inline-block min-w-5 rounded bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600 text-center">{{ filt_milestones|length|default:0 }}</span>
+              </label>
+              <div class="hidden sm:flex gap-2 text-[11px] text-slate-500">
+                <button type="button" class="underline hover:text-slate-700" onclick="selectAll('sel-milestone', true); refreshAdvBadge();">Selecionar todos</button>
+                <button type="button" class="underline hover:text-slate-700" onclick="selectAll('sel-milestone', false); refreshAdvBadge();">Limpar</button>
+              </div>
+            </div>
+            <div class="relative">
+              <select id="sel-milestone" name="milestone" multiple
+                      class="appearance-none w-full h-36 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"
+                      onchange="updateCount('sel-milestone','count-milestone'); refreshAdvBadge();">
+                {% for o in milestone_opts %}
+                  <option value="{{ o.id }}" {% if o.id in filt_milestones %}selected{% endif %}>{{ o.name }}</option>
+                {% endfor %}
+              </select>
+              <i data-lucide="chevron-down" class="pointer-events-none absolute right-3 top-3 h-4 w-4 text-slate-400"></i>
+            </div>
+            <div class="mt-1 text-[11px] text-slate-500 sm:hidden">
+              <button type="button" class="underline" onclick="selectAll('sel-milestone', true); refreshAdvBadge();">Selecionar todos</button> ·
+              <button type="button" class="underline" onclick="selectAll('sel-milestone', false); refreshAdvBadge();">Limpar</button>
+            </div>
+          </div>
+
+          {# Gerais #}
+          <div>
+            <div class="mb-1 flex items-center justify-between">
+              <label class="text-xs text-slate-500">Geral(is)
+                <span id="count-general" class="ml-1 inline-block min-w-5 rounded bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600 text-center">{{ filt_generals|length|default:0 }}</span>
+              </label>
+              <div class="hidden sm:flex gap-2 text-[11px] text-slate-500">
+                <button type="button" class="underline hover:text-slate-700" onclick="selectAll('sel-general', true); refreshAdvBadge();">Selecionar todos</button>
+                <button type="button" class="underline hover:text-slate-700" onclick="selectAll('sel-general', false); refreshAdvBadge();">Limpar</button>
+              </div>
+            </div>
+            <div class="relative">
+              <select id="sel-general" name="general" multiple
+                      class="appearance-none w-full h-36 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"
+                      onchange="updateCount('sel-general','count-general'); refreshAdvBadge();">
+                {% for o in general_opts %}
+                  <option value="{{ o.id }}" {% if o.id in filt_generals %}selected{% endif %}>{{ o.name }}</option>
+                {% endfor %}
+              </select>
+              <i data-lucide="chevron-down" class="pointer-events-none absolute right-3 top-3 h-4 w-4 text-slate-400"></i>
+            </div>
+            <div class="mt-1 text-[11px] text-slate-500 sm:hidden">
+              <button type="button" class="underline" onclick="selectAll('sel-general', true); refreshAdvBadge();">Selecionar todos</button> ·
+              <button type="button" class="underline" onclick="selectAll('sel-general', false); refreshAdvBadge();">Limpar</button>
+            </div>
+          </div>
+
+          {# Específicas (linha toda em lg) #}
+          <div class="lg:col-span-4">
+            <div class="mb-1 flex items-center justify-between">
+              <label class="text-xs text-slate-500">Específica(s)
+                <span id="count-specific" class="ml-1 inline-block min-w-5 rounded bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600 text-center">{{ filt_specifics|length|default:0 }}</span>
+              </label>
+              <div class="hidden sm:flex gap-2 text-[11px] text-slate-500">
+                <button type="button" class="underline hover:text-slate-700" onclick="selectAll('sel-specific', true); refreshAdvBadge();">Selecionar todos</button>
+                <button type="button" class="underline hover:text-slate-700" onclick="selectAll('sel-specific', false); refreshAdvBadge();">Limpar</button>
+              </div>
+            </div>
+            <div class="relative">
+              <select id="sel-specific" name="specific" multiple
+                      class="appearance-none w-full h-36 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"
+                      onchange="updateCount('sel-specific','count-specific'); refreshAdvBadge();">
+                {% for o in specific_opts %}
+                  <option value="{{ o.id }}" {% if o.id in filt_specifics %}selected{% endif %}>{{ o.name }}</option>
+                {% endfor %}
+              </select>
+              <i data-lucide="chevron-down" class="pointer-events-none absolute right-3 top-3 h-4 w-4 text-slate-400"></i>
+            </div>
+            <div class="mt-1 text-[11px] text-slate-500 sm:hidden">
+              <button type="button" class="underline" onclick="selectAll('sel-specific', true); refreshAdvBadge();">Selecionar todos</button> ·
+              <button type="button" class="underline" onclick="selectAll('sel-specific', false); refreshAdvBadge();">Limpar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 flex flex-wrap justify-end gap-2">
+          <button type="button"
+                  class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-slate-50"
+                  onclick="clearAdvanced();">
+            <i data-lucide="eraser" class="h-4 w-4"></i> Limpar avançados
+          </button>
+          <button class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 text-sm font-medium text-white hover:brightness-110">
+            <i data-lucide="filter" class="h-4 w-4"></i> Aplicar filtros
+          </button>
+        </div>
+      </div>
+    </details>
+
+    <script>
+      // mapeia selects -> badges
+      const ADV_MAP = {
+        {% if collaborator_opts is not None %}'sel-collab':'count-collab',{% endif %}
+        'sel-project':'count-project',
+        'sel-milestone':'count-milestone',
+        'sel-general':'count-general',
+        'sel-specific':'count-specific',
+      };
+
+      function selectedCountOf(id){
+        const el = document.getElementById(id);
+        return el ? el.querySelectorAll('option:checked').length : 0;
+      }
+      function refreshAdvBadge(){
+        let total = 0;
+        Object.keys(ADV_MAP).forEach(id => total += selectedCountOf(id));
+        const badge = document.getElementById('adv-count');
+        if (badge) badge.textContent = total ? `${total} ativo${total>1?'s':''}` : 'nenhum ativo';
+      }
+      function selectAll(selectId, mark){
+        const sel = document.getElementById(selectId);
+        if (!sel) return;
+        Array.from(sel.options).forEach(o => { if (o.value) o.selected = !!mark; });
+        const badgeId = ADV_MAP[selectId];
+        if (badgeId) updateCount(selectId, badgeId);
+      }
+      function updateCount(selectId, badgeId){
+        const sel = document.getElementById(selectId);
+        const badge = document.getElementById(badgeId);
+        if (sel && badge) badge.textContent = Array.from(sel.selectedOptions).length;
+      }
+      function clearAdvanced(){
+        Object.keys(ADV_MAP).forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          Array.from(el.options).forEach(o => { o.selected = false; });
+          updateCount(id, ADV_MAP[id]);
+        });
+        refreshAdvBadge();
+      }
+
+      window.addEventListener('load', () => {
+        // inicializa badges e abre se houver algo marcado
+        Object.entries(ADV_MAP).forEach(([sel,badge]) => updateCount(sel,badge));
+        refreshAdvBadge();
+        const anyActive = Object.keys(ADV_MAP).some(id => selectedCountOf(id) > 0);
+        const det = document.getElementById('adv-filters');
+        if (det && anyActive) det.open = true;
+      });
+    </script>
+  </form>
+
+  {# ============== KPIs ============== #}
+  <div class="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-slate-600">Horas no período</span>
+        <i data-lucide="clock-8" class="h-5 w-5 text-slate-400"></i>
+      </div>
+      <div class="mt-2 text-2xl font-semibold text-slate-800">{{ total_hms }}</div>
+      <div class="mt-1 text-xs text-slate-500">{{ date_from|date:"d/m/Y" }} — {{ date_to|date:"d/m/Y" }}</div>
+    </div>
+
+    <div class="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-slate-600">Dias trabalhados</span>
+        <i data-lucide="calendar-days" class="h-5 w-5 text-slate-400"></i>
+      </div>
+      <div class="mt-2 text-2xl font-semibold text-slate-800">{{ workdays_count }}</div>
+      <div class="mt-1 text-xs text-slate-500">No período selecionado</div>
+    </div>
+
+    <div class="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-slate-600">Projetos distintos</span>
+        <i data-lucide="briefcase" class="h-5 w-5 text-slate-400"></i>
+      </div>
+      <div class="mt-2 text-2xl font-semibold text-slate-800">{{ distinct_projects_count }}</div>
+      <div class="mt-1 text-xs text-slate-500">Inclui “Sem projeto” se aplicável</div>
+    </div>
+
+    <div class="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-slate-600">Principais frentes (EAP)</span>
+        <i data-lucide="layers" class="h-5 w-5 text-slate-400"></i>
+      </div>
+      <div class="mt-2 text-2xl font-semibold text-slate-800">{{ top_eap_count }}</div>
+      <div class="mt-1 text-xs text-slate-500">Top 10 listadas abaixo</div>
+    </div>
+  </div>
+
+  {# ============== Gráficos ============== #}
+  <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+    <section class="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm">
+      <div class="mb-2 flex items-center justify-between">
+        <h2 class="text-sm font-semibold text-slate-700">Horas por dia (linha)</h2>
+        <i data-lucide="activity" class="h-5 w-5 text-slate-400"></i>
+      </div>
+      <div class="h-64 md:h-72"><canvas id="chart-days"></canvas></div>
+    </section>
+
+    <section class="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm">
+      <div class="mb-2 flex items-center justify-between">
+        <h2 class="text-sm font-semibold text-slate-700">Top projetos (barras)</h2>
+        <i data-lucide="bar-chart-3" class="h-5 w-5 text-slate-400"></i>
+      </div>
+      <div class="h-64 md:h-72"><canvas id="chart-projects"></canvas></div>
+    </section>
+
+    <section class="lg:col-span-2 rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm">
+      <div class="mb-2 flex items-center justify-between">
+        <h2 class="text-sm font-semibold text-slate-700">Distribuição por Marco (pizza)</h2>
+        <i data-lucide="pie-chart" class="h-5 w-5 text-slate-400"></i>
+      </div>
+      <div class="h-72 md:h-80"><canvas id="chart-milestones"></canvas></div>
+    </section>
+  </div>
+
+  {# ============== Barras simples por dia ============== #}
+  <section class="mt-6 rounded-2xl border border-slate-200/70 bg-white p-4 shadow-sm">
+  <div class="mb-2 flex items-center justify-between">
+    <h2 class="text-sm font-semibold text-slate-700">Horas por dia (barras simples)</h2>
+    <i data-lucide="timer" class="h-5 w-5 text-slate-400"></i>
+  </div>
+
+  {% if per_day_rows %}
+    <div class="space-y-2">
+      {% for row in per_day_rows %}
+        {% with pct=row.pct|default:0 %}
+        <div class="flex items-center gap-3">
+          <div class="w-24 shrink-0 text-xs text-slate-500">{{ row.label }}</div>
+
+          <div class="relative h-3 flex-1 overflow-hidden rounded-full bg-slate-100">
+            {# Usa bg-brand + opacity-80 (compatível) e garante % numérica #}
+            <div class="absolute left-0 top-0 h-full bg-brand opacity-80" style="width: {{ pct|floatformat:2 }}%"></div>
+          </div>
+
+          {# w-18 -> w-20 (classe válida) + números tabulares p/ alinhar #}
+          <div class="w-20 shrink-0 text-right text-xs text-slate-600 tabular-nums">
+            {{ row.hms|default:"0h" }}
+          </div>
+        </div>
+        {% endwith %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="text-sm text-slate-500">Sem horas registradas no período selecionado.</div>
+  {% endif %}
+</section>
+
+
+</div>
+
+{{ chart_data|json_script:"chart-data" }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // --- Presets de período ---
+  function toISO(d){ return d.toISOString().slice(0,10); }
+  function firstDayOfMonth(d){ return new Date(d.getFullYear(), d.getMonth(), 1); }
+  function lastDayOfMonth(d){ return new Date(d.getFullYear(), d.getMonth()+1, 0); }
+  function presetRange(kind){
+    const form = document.getElementById('filter-form');
+    if(!form) return;
+    const de  = form.querySelector('[name="de"]');
+    const ate = form.querySelector('[name="ate"]');
+    const today = new Date();
+    let d1, d2;
+    if (kind==='today'){ d1=today; d2=today; }
+    else if (kind==='last7'){ d2=today; d1=new Date(today); d1.setDate(today.getDate()-6); }
+    else if (kind==='month'){ d1=firstDayOfMonth(today); d2=lastDayOfMonth(today); }
+    else if (kind==='last30'){ d2=today; d1=new Date(today); d1.setDate(today.getDate()-29); }
+    de.value = toISO(d1); ate.value = toISO(d2); form.submit();
+  }
+
+  // --- Gráficos ---
+  const dataEl = document.getElementById('chart-data');
+  if (dataEl) {
+    const data = JSON.parse(dataEl.textContent);
+    const fmtHour = v => `${v} h`;
+    const charts = [];
+
+    charts.push(new Chart(document.getElementById('chart-days'), {
+      type: 'line',
+      data: { labels: data.days.labels, datasets: [{ label: 'Horas', data: data.days.values, fill: false, tension: 0.25 }] },
+      options: {
+        maintainAspectRatio: false, animation: { duration: 600 }, responsive: true,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.y} h` } } },
+        scales: { y: { beginAtZero: true, ticks: { callback: fmtHour } } }
+      }
+    }));
+
+    charts.push(new Chart(document.getElementById('chart-projects'), {
+      type: 'bar',
+      data: { labels: data.projects.labels, datasets: [{ label: 'Horas', data: data.projects.values }] },
+      options: {
+        maintainAspectRatio: false, animation: { duration: 600 }, indexAxis: 'y',
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.x} h` } } },
+        scales: { x: { beginAtZero: true, ticks: { callback: fmtHour } } }
+      }
+    }));
+
+    charts.push(new Chart(document.getElementById('chart-milestones'), {
+      type: 'pie',
+      data: { labels: data.milestones.labels, datasets: [{ data: data.milestones.values }] },
+      options: { maintainAspectRatio: false, animation: { duration: 600 }, plugins: { legend: { position: 'bottom' } } }
+    }));
+
+    // Melhor render na impressão
+    window.addEventListener('beforeprint', () => { charts.forEach(c => { try { c.resize(); } catch(e){} }); });
+    window.addEventListener('afterprint',  () => { charts.forEach(c => { try { c.resize(); } catch(e){} }); });
+  }
+</script>
+
+{% endblock %}

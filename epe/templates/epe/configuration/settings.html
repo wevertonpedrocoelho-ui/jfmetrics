@@ -1,0 +1,179 @@
+{# automation/templates/configuration/settings.html #}
+{% extends "epe/base.html" %}
+{% block title %}JF Metrics | Configurações{% endblock %}
+
+{% block content %}
+
+  <div class="mb-5">
+    <h1 class="flex items-center gap-2 text-xl font-semibold text-slate-800">
+      <i data-lucide="settings" class="h-5 w-5 text-slate-700"></i>
+      Configurações
+    </h1>
+    <p class="mt-1 text-sm text-slate-500">Atualize seu nome, e-mail e telefone.</p>
+  </div>
+
+  {# =================== FORM: PERFIL =================== #}
+  <form method="post" class="max-w-2xl">
+    {% csrf_token %}
+
+    {# Mensagens de erro gerais do form #}
+    {% if form.non_field_errors %}
+      <div class="mb-4 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-sm text-rose-700">
+        {{ form.non_field_errors }}
+      </div>
+    {% endif %}
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {# Nome #}
+      <div class="sm:col-span-2">
+        <label for="{{ form.name.id_for_label }}" class="mb-1.5 block text-sm font-medium text-slate-700">
+          Nome
+        </label>
+        <input
+          type="text"
+          name="{{ form.name.html_name }}"
+          id="{{ form.name.id_for_label }}"
+          value="{{ form.name.value|default_if_none:'' }}"
+          class="w-full rounded-xl border {% if form.name.errors %}border-rose-300{% else %}border-slate-200{% endif %} bg-white py-2 px-3 text-sm outline-none focus:border-brand/40 focus:ring-2 focus:ring-brand/30">
+        {% if form.name.errors %}
+          <p class="mt-1 text-xs text-rose-600">{{ form.name.errors|striptags }}</p>
+        {% endif %}
+      </div>
+
+      {# E-mail #}
+      <div>
+        <label for="{{ form.email.id_for_label }}" class="mb-1.5 block text-sm font-medium text-slate-700">
+          E-mail
+        </label>
+        <input
+          type="email"
+          name="{{ form.email.html_name }}"
+          id="{{ form.email.id_for_label }}"
+          value="{{ form.email.value|default_if_none:'' }}"
+          class="w-full rounded-xl border {% if form.email.errors %}border-rose-300{% else %}border-slate-200{% endif %} bg-white py-2 px-3 text-sm outline-none focus:border-brand/40 focus:ring-2 focus:ring-brand/30">
+        {% if form.email.errors %}
+          <p class="mt-1 text-xs text-rose-600">{{ form.email.errors|striptags }}</p>
+        {% endif %}
+      </div>
+
+      {# Telefone #}
+      <div>
+        <label for="{{ form.phone.id_for_label }}" class="mb-1.5 block text-sm font-medium text-slate-700">
+          Telefone
+        </label>
+        <input
+          type="text"
+          name="{{ form.phone.html_name }}"
+          id="{{ form.phone.id_for_label }}"
+          value="{{ form.phone.value|default_if_none:'' }}"
+          class="w-full rounded-xl border {% if form.phone.errors %}border-rose-300{% else %}border-slate-200{% endif %} bg-white py-2 px-3 text-sm outline-none focus:border-brand/40 focus:ring-2 focus:ring-brand/30">
+        {% if form.phone.errors %}
+          <p class="mt-1 text-xs text-rose-600">{{ form.phone.errors|striptags }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="mt-5 flex items-center gap-2">
+      <button
+        type="submit"
+        name="profile_submit"
+        value="1"
+        class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 text-sm font-medium text-white hover:brightness-110">
+        <i data-lucide="save" class="h-4 w-4"></i>
+        Salvar mudanças
+      </button>
+
+      <a href="{% url 'automation:dashboard' %}" class="inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm hover:bg-slate-50">
+        <i data-lucide="arrow-left" class="h-4 w-4"></i>
+        Voltar
+      </a>
+    </div>
+  </form>
+
+  {# Divider #}
+  <div class="my-8 h-px w-full bg-slate-200 mt-6"></div>
+
+  {# =================== FORM: ALTERAR SENHA =================== #}
+  <div class="mb-4 mt-6">
+    <h2 class="flex items-center gap-2 text-lg font-semibold text-slate-800">
+      <i data-lucide="lock" class="h-5 w-5 text-slate-700"></i>
+      Alterar senha
+    </h2>
+    <p class="mt-1 text-sm text-slate-500">Defina uma nova senha para sua conta.</p>
+  </div>
+
+  <form method="post" class="max-w-2xl">
+    {% csrf_token %}
+
+    {% if pwd_form.non_field_errors %}
+      <div class="mb-4 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-sm text-rose-700">
+        {{ pwd_form.non_field_errors }}
+      </div>
+    {% endif %}
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {# Senha atual #}
+      <div class="sm:col-span-2">
+        <label for="{{ pwd_form.old_password.id_for_label }}" class="mb-1.5 block text-sm font-medium text-slate-700">
+          Senha atual
+        </label>
+        <input
+          type="password"
+          name="{{ pwd_form.old_password.html_name }}"
+          id="{{ pwd_form.old_password.id_for_label }}"
+          autocomplete="current-password"
+          class="w-full rounded-xl border {% if pwd_form.old_password.errors %}border-rose-300{% else %}border-slate-200{% endif %} bg-white py-2 px-3 text-sm outline-none focus:border-brand/40 focus:ring-2 focus:ring-brand/30">
+        {% if pwd_form.old_password.errors %}
+          <p class="mt-1 text-xs text-rose-600">{{ pwd_form.old_password.errors|striptags }}</p>
+        {% endif %}
+      </div>
+
+      {# Nova senha #}
+      <div>
+        <label for="{{ pwd_form.new_password1.id_for_label }}" class="mb-1.5 block text-sm font-medium text-slate-700">
+          Nova senha
+        </label>
+        <input
+          type="password"
+          name="{{ pwd_form.new_password1.html_name }}"
+          id="{{ pwd_form.new_password1.id_for_label }}"
+          autocomplete="new-password"
+          class="w-full rounded-xl border {% if pwd_form.new_password1.errors %}border-rose-300{% else %}border-slate-200{% endif %} bg-white py-2 px-3 text-sm outline-none focus:border-brand/40 focus:ring-2 focus:ring-brand/30">
+        {% if pwd_form.new_password1.errors %}
+          <p class="mt-1 text-xs text-rose-600">{{ pwd_form.new_password1.errors|striptags }}</p>
+        {% endif %}
+        {% if pwd_form.new_password1.help_text %}
+          <div class="mt-1 text-xs text-slate-500">{{ pwd_form.new_password1.help_text|safe }}</div>
+        {% endif %}
+      </div>
+
+      {# Confirmar nova senha #}
+      <div>
+        <label for="{{ pwd_form.new_password2.id_for_label }}" class="mb-1.5 block text-sm font-medium text-slate-700">
+          Confirmar nova senha
+        </label>
+        <input
+          type="password"
+          name="{{ pwd_form.new_password2.html_name }}"
+          id="{{ pwd_form.new_password2.id_for_label }}"
+          autocomplete="new-password"
+          class="w-full rounded-xl border {% if pwd_form.new_password2.errors %}border-rose-300{% else %}border-slate-200{% endif %} bg-white py-2 px-3 text-sm outline-none focus:border-brand/40 focus:ring-2 focus:ring-brand/30">
+        {% if pwd_form.new_password2.errors %}
+          <p class="mt-1 text-xs text-rose-600">{{ pwd_form.new_password2.errors|striptags }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <button
+        type="submit"
+        name="password_submit"
+        value="1"
+        class="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:brightness-110">
+        <i data-lucide="key" class="h-4 w-4"></i>
+        Alterar senha
+      </button>
+    </div>
+  </form>
+
+{% endblock %}

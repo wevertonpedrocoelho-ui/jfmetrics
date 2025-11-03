@@ -1,0 +1,12 @@
+<form method="post">
+  {% csrf_token %}
+  <h1>Escolha o departamento</h1>
+  <div>
+    {% for d in memberships %}
+      <label style="display:block;margin:.5rem 0;">
+        <input type="radio" name="namespace" value="{{ d.namespace }}"> {{ d.label }}
+      </label>
+    {% endfor %}
+  </div>
+  <button type="submit">Entrar</button>
+</form>

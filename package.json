@@ -1,0 +1,9 @@
+{
+  "name": "jfmetrics",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tailwindcss -c ./tailwind.config.js -i ./static/css/input.css -o ./static/css/output.css --watch --poll",
+    "build": "tailwindcss -c ./tailwind.config.js -i ./static/css/input.css -o ./static/css/output.css --minify"
+  }
+}
