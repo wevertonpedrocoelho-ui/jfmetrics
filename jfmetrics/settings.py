@@ -1,10 +1,23 @@
 ﻿# settings.py
 from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
+import os
+from dotenv import load_dotenv
 
-SECRET_KEY = "troque-isto"
-DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]  # bom ter no dev
+BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / ".env")
+
+SECRET_KEY = os.getenv("SECRET_KEY", "troque-isto")
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
+
+ALLOWED_HOSTS = os.getenv(
+    "ALLOWED_HOSTS",
+    "72.60.57.185,127.0.0.1,localhost"
+).split(",")
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://72.60.57.185",
+    "https://72.60.57.185",
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin","django.contrib.auth","django.contrib.contenttypes",
@@ -17,35 +30,17 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    # WhiteNoise precisa vir logo após SecurityMiddleware
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
-    # ⇩⇩ ADICIONE o middleware de acesso por departamento AQUI (depois do AuthenticationMiddleware)
     "core.middleware.DepartmentAccessMiddleware",
 ]
 
 ROOT_URLCONF = "jfmetrics.urls"
-
-TEMPLATES = [{
-    "BACKEND": "django.template.backends.django.DjangoTemplates",
-    "DIRS": [BASE_DIR / "templates"],
-    "APP_DIRS": True,
-    "OPTIONS": {
-        "context_processors": [
-            "django.template.context_processors.debug",
-            "django.template.context_processors.request",
-            "django.contrib.auth.context_processors.auth",
-            "django.contrib.messages.context_processors.messages",
-            # seus CPs:
-            "automation.context_processors.user_flags",
-            "automation.context_processors.notifications",   # use a versão “safe” que te passei
-            "core.context_processors.department_context",
-        ]
-    },
-}]
-
 WSGI_APPLICATION = "jfmetrics.wsgi.application"
 
 DATABASES = {
@@ -55,11 +50,7 @@ DATABASES = {
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-# URLs de auth
-LOGIN_URL = "login"                    # pode ser nome da URL (resolve_url cuida disso)
-LOGOUT_REDIRECT_URL = "login"          # idem
-LOGIN_REDIRECT_URL = "/after-login/"   # deixe só ESTA (remova a anterior "automation:dashboard")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 LANGUAGE_CODE = "pt-br"
 TIME_ZONE = "America/Sao_Paulo"
