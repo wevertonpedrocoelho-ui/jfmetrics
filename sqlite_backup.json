@@ -1,0 +1,4284 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$cPe3IrqacRwYCilR1K7Ok0$955savsvLJEn6HWY8IEVGDcWNqEGooMabxrSqiFNk/8=",
+    "last_login": "2025-11-03T17:55:59.373Z",
+    "is_superuser": true,
+    "username": "wever",
+    "first_name": "Weverton",
+    "last_name": "Pedro",
+    "email": "weverton@jfenergia.com.br",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-09-18T13:20:18Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$1KGq856x0YeqwDnBlyW8tN$QAZrGp5DL1eJTNCn6Lz7Q+FYIOmiK1uVrfuDBHjJRgY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "rodrigo.ferreira@jfautomacao.com.br",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-25T16:57:42.111Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$IPsuUj2iprLTkz0BXyx0b9$8V0DC/LDmcQsQP87/xz//1eP4Y44qQjeiAjK0ExmhYM=",
+    "last_login": "2025-11-03T16:38:22.747Z",
+    "is_superuser": false,
+    "username": "rafael.fernandes@jfautomacao.com.br",
+    "first_name": "Rafael",
+    "last_name": "Fernandes",
+    "email": "rafael.fernandes@jfautomacao.com.br",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-25T16:58:43Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$wUf0A9ZI4zMLYGUCiVlQ31$Xwfp/Vz6vSzXeptupL/D/4p3w2UdeR9VRS1GbBUhGkE=",
+    "last_login": "2025-11-03T17:44:54.639Z",
+    "is_superuser": true,
+    "username": "weverton@jfenergia.com.br",
+    "first_name": "Weverton",
+    "last_name": "Pedro",
+    "email": "weverton@jfenergia.com.br",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-25T17:01:47Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$nPVTBLsVDjTu7mQKnMr7NH$zL94WzWCEckXiTiQaKsrCNqPvKZXQ9X90eaMteZh1t4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "arone.angelino@jfautomacao.com.br",
+    "first_name": "Arone",
+    "last_name": "Angelino",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-25T17:51:09Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$yg5WRINMl9NGELcX00Aw19$P9QQ1okEfaL3RuzyOfn+7oZv9Jh9ITdXxDxagqRRYqw=",
+    "last_login": "2025-10-17T14:53:21.001Z",
+    "is_superuser": false,
+    "username": "francisco.santos@jfenergia.com.br",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-25T18:57:21Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$8fviXapx7yOQkfNJ9ml0Lh$1S2maffXAcv3z/8vawwvYVx3+qW7hG2RJvIM+UeRo9A=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "rogerio.lima@jfenergia.com.br",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-25T18:58:40.760Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$JILZLt4JnfiLJwLw8KWX3Z$OamsAP5cD0UbN4cWsbDW3Z/c5LP5NNpYpkknarTmIyY=",
+    "last_login": "2025-11-03T17:56:24.428Z",
+    "is_superuser": false,
+    "username": "amanda.duarte@jfautomacao.com.br",
+    "first_name": "Amanda",
+    "last_name": "Duarte",
+    "email": "amanda.duarte@jfautomacao.com.br",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-09-26T13:31:47Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$iRsgbFUYahCD2QVMJnWhsT$aPjML2ijqECtxqEVgca8+xNVROcvzyEkSVsHcyB2dus=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "alexandre.nunes@jfautomacao.com.br",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-03T12:21:40.091Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$y7qDghlnuvuWbxLusiB524$aeaUW8Nc9oCBJsU1RTnPK45zX11L+e2G5KvS2VTeoSg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "laiza.padilha@jfautomacao.com.br",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-11-03T12:22:27.193Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2nh66chbgk8yltg05qhwjaxgm4n8wbeq",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEzlPJw6d5vIMMAUjU0Ke3K-O_apAvd3nPOfYlA21rD1vMSpiTOAsXpd4vEj9x2kO7UbrPkua3LFOWuyIN2eZ1Tfl4O9--gUq_fWjNyyWDBZ6fUGGMCxUblkay1Gtl5MwADYHTFRCrODcQqYQGPmtCK9wfcizeO:1v9ljV:kA46yGF_K7oBAzzTRZljCWcBQEc7YZGBsbNdM7YUh2Q",
+    "expire_date": "2025-10-31T14:47:05.433Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2zradp9gq3pooqf9yyc3rtjxvrsj998e",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHSFsbD4p0-cMaIHd4MTClsFVlLsHSy6S9s28eTMHe01uL7i5KbIr6wS7_I4ewgvzQeIT8mPhYcl1mzw_FH7Swu9LxPl2un-BBCW1N8lBCmnNgKRJmGC7qBDHfjQSCcFaHUAZI4OJGlEqT4oCKeEteKF936IzlOoirtXl0oq4Ivt8AQFxP-E:1v9N7F:uNvGsmrBDoH29KyfR3-Vq8132Z12cz8KBpiShg-Ykt8",
+    "expire_date": "2025-10-30T12:29:57.202Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "4wm53t99z99litdrkn20af6wben9tbg5",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAABP_iGlk2vinp8wZrfeEAsqU4qRB_h0gpoN2Z2Rfx2Nbqt5EXPydyIZycfreA-MhtB-mOdus09rYuc6C7Qg866NRTfl4P9--gYtRvrR2L3EiNoG0-Z60lBwrAWeJI1lhRSokBTCioKCClUsoxI3IMxXFD3h_rkjgm:1vFyay:rQnGRSnO31Z7H-jbiyfWS1DrGG-MYOIXgF_Ffyy7DFE",
+    "expire_date": "2025-11-17T17:43:56.443Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "59gk1aqfv1unl4kk6wz9cxgdwjrjzkt9",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGln-rU0o6TmDtWtvcADZUpxUiLuTSCmgfTPz3iLiupS4dp7jlMVFWHH63QjTk-sO8gPrvcnU6jJPJHdFHrTLW8v8uh7u30HBXrbasIWAPozn4EfWyiGC88YptEhAAZIiQz5R9hpMDpvJXgeGARIOzOLzBdtFOAU:1uzHQX:UIbbMwGkkJdtdmKrOtxhCZ8-IvRHMENhfh0OkMxkznI",
+    "expire_date": "2025-10-02T16:24:09.909Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "7z11hzxo8imtij21cti6il2cst8k3hwa",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlny36ak5wzWeneDA8iW4qRC3B0ipYD2zcx7iQzbWvM2eMkzibPQ4vS7FcAHtx3QHdqtS-xtXeYid0UedMhrJ35eDvfvoMKo37qw99qSD2AiR0vKq2hiCA4Vu0QOvDaooNAUzBQI0UIyyhHFkqJGJd4f2cs35Q:1v1kjR:q6G3WzSL4he5h79VfkyJJtmRk8PyATv2eeWlgJ9F-wI",
+    "expire_date": "2025-10-09T12:05:53.323Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "9lw253ik69lf5jcwfv43ukci927h37ah",
+  "fields": {
+    "session_data": ".eJxVjcsOwiAURP-FtSEUedWle7-BwL2XtmrAFLoy_rs06UK3c2bOvJkPW5v9Vmn1C7IL0-z0m8UAD8o7wHvIU-FQcluXyPcKP2jlt4L0vB7dP8Ec6tzXwpE1epDgkkIZlNRkzk7bFEWSLopB6KS0sgJiAjISQY2DGYVNIBXa2KXPUJtHejWfazdSnvpLYZ8vpXxAWQ:1v3gDk:GEGNvwqBAUU0H3dy25-8Y70haPZ4LPT_z7Y9Yf9HBmQ",
+    "expire_date": "2025-10-14T19:41:08.878Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ade83n4z3aynjilyxq5hxeoiybj6cj8r",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGllONvGHkp4zWOv1Lg4gR4qTCnF3iJQC2jcz76UibmuJW-MlTlmdVWfU6XdMSA-uO8l3rLdZ01zXZUp6V_RBm77OmZ-Xw_07KNjKtxYYwEDwA4sT4yl02TKP_eiBhTEER2i9B_LZMYNNYoXEmhQwGZd69f4ADL84uQ:1v2DFe:7GNwvit4KFssi1r4pC7iG12-mKiuCmb6KLTWC_kVEmw",
+    "expire_date": "2025-10-10T18:33:02.602Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "d1o4xe950f3l4gj0bhr027q23ec14hm5",
+  "fields": {
+    "session_data": ".eJxVjDkOwjAABP_iGlk2vinp8wZrfeEAsqU4qRB_h0gpoN2Z2Rfx2Nbqt5EXPydyIZycfreA-MhtB-mOdus09rYuc6C7Qg866NRTfl4P9--gYtRvrR2L3EiNoG0-Z60lBwrAWeJI1lhRSokBTCioKCClUsoxI3IMxXFD3h_rkjgm:1vFycq:wdcB3rAppZATc1Wmk4kqrI9uN_R7CoJAae1e7A6h9_8",
+    "expire_date": "2025-11-17T17:45:52.444Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "e4rxlo3hjgokqqfxr5ofuvo8kuervtv6",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHSFsbD4p0-cMaIHd4MTClsFVlLsHSy6S9s28eTMHe01uL7i5KbIr6wS7_I4ewgvzQeIT8mPhYcl1mzw_FH7Swu9LxPl2un-BBCW1N8lBCmnNgKRJmGC7qBDHfjQSCcFaHUAZI4OJGlEqT4oCKeEteKF936IzlOoirtXl0oq4Ivt8AQFxP-E:1v3evh:Y_pfbGq94s1b7G680JT4npqZZNKpFy-YQr4qiPSSmj0",
+    "expire_date": "2025-10-14T18:18:25.850Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "gmjjhwngtrd4lcq543dj9omkivefce1h",
+  "fields": {
+    "session_data": ".eJxVjcEOwiAQRP-FsyHYwlI8evcbyLKsbbUBU-jJ-O_SpAe9zpt58xYetzr5rfDq5yguAsTpNwtIT047iA9MY5aUU13nIPeKPGiRtxx5uR7dP8GEZWrrc2eIO2AOGHsVlHEQMehorCU1gFbIjKZ3yirNoKgfDDg3WHcncEDUpAuW6iO_qk-lGTmN7SWLzxfKpkCW:1vFyaB:Lq3_YudaMVau_1fkRfPbDtadAp-iILkLijTeM2W2wbc",
+    "expire_date": "2025-11-17T17:43:07.724Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "i3lz1zv2moxk2m6jhz7zcit0kkxjtq3f",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEzlPJw6d5vIMMAUjU0Ke3K-O_apAvd3nPOfYlA21rD1vMSpiTOAsXpd4vEj9x2kO7UbrPkua3LFOWuyIN2eZ1Tfl4O9--gUq_fWjNyyWDBZ6fUGGMCxUblkay1Gtl5MwADYHTFRCrODcQqYQGPmtCK9wfcizeO:1v3eiG:y1xs6fYGaEB7lO__Ju1386xCMZYtY-cldx6QA5jUW4M",
+    "expire_date": "2025-10-14T18:04:32.953Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "lv3kj5uozbvqhep34mbq6zvfq0zabydm",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hDAGaAu3fcMBAZGqoYmpV0Z765NutDtf-_9lwhxW2vYelnClMVFoDj9binSo7Qd5Htst1nS3NZlSnJX5EG7HOdcntfD_TuosddvrXxxFrUhz5BNBIPFnj06ToqNT0orZEBwihJTsSYTDNoOyjEZyC6J9wfLYjd4:1v272h:EvYT0sGhxec4qvmxtWZsNxOtsnd2KSaArOlq7Q_nbwo",
+    "expire_date": "2025-10-10T11:55:15.656Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mwfzya37bpzqu7qh8uxk5qm4562cq5jq",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSFTBoS6dN9vIAMztVUDSR8r478rSRe6veec-1KR9m2K-ypLnFldlFGn3y1RfkhpgO9UblXnWrZlTrop-qCrHirL83q4fwcTrVOrwRqAYDPiSA5FABJ2bpQ-98EntMA9BpMC-SRnZt-h8V8KLnPuiNT7A9LCN_Q:1uzJr0:lzfGSzGznurs7_orh1tj9uvgYx6qHhfdqX5_muaCRy8",
+    "expire_date": "2025-10-02T18:59:38.210Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ngybszrrm8tc3ei1f775vgobwm15ypqa",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEzlPJw6d5vIMMAUjU0Ke3K-O_apAvd3nPOfYlA21rD1vMSpiTOAsXpd4vEj9x2kO7UbrPkua3LFOWuyIN2eZ1Tfl4O9--gUq_fWjNyyWDBZ6fUGGMCxUblkay1Gtl5MwADYHTFRCrODcQqYQGPmtCK9wfcizeO:1v3ZoN:sbqy9pD4hHoIE4_28U123Fju_A4lEDW08Svh6QY6VQs",
+    "expire_date": "2025-10-14T12:50:31.201Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "r914wt7gf5mi2oeic8ydmolv3wpxmtjz",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEzlPJw6d5vIMMAUjU0Ke3K-O_apAvd3nPOfYlA21rD1vMSpiTOAsXpd4vEj9x2kO7UbrPkua3LFOWuyIN2eZ1Tfl4O9--gUq_fWjNyyWDBZ6fUGGMCxUblkay1Gtl5MwADYHTFRCrODcQqYQGPmtCK9wfcizeO:1uzKUv:Nrnj3dIa_TUNbSU4b0rhuVWj0GLI6lzMdV0VucZNzu8",
+    "expire_date": "2025-10-02T19:40:53.711Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "riuu68kiv1gni3otg91tsdv2undwghzq",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHSFsbD4p0-cMaIHd4MTClsFVlLsHSy6S9s28eTMHe01uL7i5KbIr6wS7_I4ewgvzQeIT8mPhYcl1mzw_FH7Swu9LxPl2un-BBCW1N8lBCmnNgKRJmGC7qBDHfjQSCcFaHUAZI4OJGlEqT4oCKeEteKF936IzlOoirtXl0oq4Ivt8AQFxP-E:1v3Ygg:ZEQD_OW-04Bqs6Lqdcp3YmbePga06ZoMEj1zvgTlGwE",
+    "expire_date": "2025-10-14T11:38:30.602Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vkloc28coc0qnh8g0i2njwfm6en5gwo6",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGllONvGHkp4zWOv1Lg4gR4qTCnF3iJQC2jcz76UibmuJW-MlTlmdVWfU6XdMSA-uO8l3rLdZ01zXZUp6V_RBm77OmZ-Xw_07KNjKtxYYwEDwA4sT4yl02TKP_eiBhTEER2i9B_LZMYNNYoXEmhQwGZd69f4ADL84uQ:1v3Zvu:kUx4bo_Sq5v-O-EFYVD58OiTPl9AvO4A7be8p2tt6yI",
+    "expire_date": "2025-10-14T12:58:18.920Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vp4jzlk7sit6fvuwh2r1a1gasuy6eo2n",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEzlPJw6d5vIMMAUjU0Ke3K-O_apAvd3nPOfYlA21rD1vMSpiTOAsXpd4vEj9x2kO7UbrPkua3LFOWuyIN2eZ1Tfl4O9--gUq_fWjNyyWDBZ6fUGGMCxUblkay1Gtl5MwADYHTFRCrODcQqYQGPmtCK9wfcizeO:1v3gX2:WosVkR_hwhIREcCJ10dKSmECBHkulqVlzcgFLv0024A",
+    "expire_date": "2025-10-14T20:01:04.196Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vq6mk71y0jc15wjeoovn6mar4rp5c5zc",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEzlPJw6d5vIMMAUjU0Ke3K-O_apAvd3nPOfYlA21rD1vMSpiTOAsXpd4vEj9x2kO7UbrPkua3LFOWuyIN2eZ1Tfl4O9--gUq_fWjNyyWDBZ6fUGGMCxUblkay1Gtl5MwADYHTFRCrODcQqYQGPmtCK9wfcizeO:1v3e9I:M9_THc0ijcZMdy0Gnj_y2Rdsc-HSd-c0CdtnwTd2Fhc",
+    "expire_date": "2025-10-14T17:28:24.504Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "w60i2v85ulwvmrcgfomgs8e4kyx8t3pv",
+  "fields": {
+    "session_data": ".eJxVjsEOgjAQRP-lZ9NQrHTx6N1vaHa3W0FJIbScjP8uTTjodd7My7yVx60Mfsuy-jGoqzKNOv2GhPySVEl4YnrMmudU1pF0reiDZn2fg0y3o_snGDAP-9qya6OTBoQNdBw7ZnYQ26Y_G2bb00UsgoUukkMCi8jUx0BoxAFhfTVhLj7IUnzKu1EWUZ8vJtRAgw:1vFyn2:A9kRkEs41X1flyL1IDAvWmMz886bfJhhKx92pEcNNZ0",
+    "expire_date": "2025-11-17T17:56:24.536Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wzzdhoubm6c0dfhrcv432i4phdi7v9dk",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEzlPJw6d5vIMMAUjU0Ke3K-O_apAvd3nPOfYlA21rD1vMSpiTOAsXpd4vEj9x2kO7UbrPkua3LFOWuyIN2eZ1Tfl4O9--gUq_fWjNyyWDBZ6fUGGMCxUblkay1Gtl5MwADYHTFRCrODcQqYQGPmtCK9wfcizeO:1v9lgm:gAaJqNqnY4LXgUT22Vrc6DHrGFnrPQaOwlgayQ1sKwo",
+    "expire_date": "2025-10-31T14:44:16.022Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "z4jowgrla2ctt5lvwl8uz1mlkyc857v8",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlny36ak5wzWeneDA8iW4qRC3B0ipYD2zcx7iQzbWvM2eMkzibPQ4vS7FcAHtx3QHdqtS-xtXeYid0UedMhrJ35eDvfvoMKo37qw99qSD2AiR0vKq2hiCA4Vu0QOvDaooNAUzBQI0UIyyhHFkqJGJd4f2cs35Q:1uzh0G:IkA_ZiWRVjd85H0seW90sKc7QpnPijohkXPmM1Yg5aU",
+    "expire_date": "2025-10-03T19:42:44.196Z"
+  }
+},
+{
+  "model": "common.department",
+  "pk": 1,
+  "fields": {
+    "slug": "engauto",
+    "name": "Engenharia de Automação",
+    "is_active": true
+  }
+},
+{
+  "model": "common.department",
+  "pk": 2,
+  "fields": {
+    "slug": "epe",
+    "name": "Engenharia de Painéis Elétricos",
+    "is_active": true
+  }
+},
+{
+  "model": "common.collaborator",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "weverton@jfenergia.com.br"
+    ],
+    "name": "Weverton Pedro",
+    "email": "weverton@jfenergia.com.br",
+    "phone": "(62) 9 9461-8843",
+    "photo": "",
+    "department": 1,
+    "is_manager": true,
+    "is_active": true,
+    "created_at": "2025-09-30T14:34:33.572Z"
+  }
+},
+{
+  "model": "common.collaborator",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "amanda.duarte@jfautomacao.com.br"
+    ],
+    "name": "Amanda Duarte",
+    "email": "amanda.duarte@jfautomacao.com.br",
+    "phone": "(62) 9 9238-7070",
+    "photo": "",
+    "department": 2,
+    "is_manager": true,
+    "is_active": true,
+    "created_at": "2025-09-30T14:35:07.015Z"
+  }
+},
+{
+  "model": "common.collaborator",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "rafael.fernandes@jfautomacao.com.br"
+    ],
+    "name": "Rafael Fernandes",
+    "email": "rafael.fernandes@jfautomacao.com.br",
+    "phone": "(62) 9 9182-9153",
+    "photo": "",
+    "department": 1,
+    "is_manager": false,
+    "is_active": true,
+    "created_at": "2025-09-30T17:31:38.069Z"
+  }
+},
+{
+  "model": "common.collaborator",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "arone.angelino@jfautomacao.com.br"
+    ],
+    "name": "Arone Angelino",
+    "email": "arone.angelino@jfautomacao.com.br",
+    "phone": "(XX) X XXXX-XXXX",
+    "photo": "",
+    "department": 1,
+    "is_manager": false,
+    "is_active": true,
+    "created_at": "2025-10-16T11:41:38.770Z"
+  }
+},
+{
+  "model": "common.collaborator",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "francisco.santos@jfenergia.com.br"
+    ],
+    "name": "Francisco Terêncio",
+    "email": "francisco.santos@jfenergia.com.br",
+    "phone": "(XX) X XXXX-XXXX",
+    "photo": "",
+    "department": 1,
+    "is_manager": false,
+    "is_active": true,
+    "created_at": "2025-10-16T11:42:06.698Z"
+  }
+},
+{
+  "model": "common.collaborator",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "rogerio.lima@jfenergia.com.br"
+    ],
+    "name": "Rogério Lima",
+    "email": "rogerio.lima@jfenergia.com.br",
+    "phone": "(XX) X XXXX-XXXX",
+    "photo": "",
+    "department": 1,
+    "is_manager": false,
+    "is_active": true,
+    "created_at": "2025-10-16T11:42:37.741Z"
+  }
+},
+{
+  "model": "common.collaborator",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "rodrigo.ferreira@jfautomacao.com.br"
+    ],
+    "name": "Rodrigo Ferreira",
+    "email": "rodrigo.ferreira@jfautomacao.com.br",
+    "phone": "(XX) X XXXX-XXXX",
+    "photo": "",
+    "department": 1,
+    "is_manager": true,
+    "is_active": true,
+    "created_at": "2025-10-16T11:46:46.253Z"
+  }
+},
+{
+  "model": "common.collaborator",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "alexandre.nunes@jfautomacao.com.br"
+    ],
+    "name": "Alexandre Nunes",
+    "email": "alexandre.nunes@jfautomacao.com.br",
+    "phone": "(XX) X XXXX-XXXX",
+    "photo": "",
+    "department": 2,
+    "is_manager": false,
+    "is_active": true,
+    "created_at": "2025-11-03T12:22:04.470Z"
+  }
+},
+{
+  "model": "common.collaborator",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "laiza.padilha@jfautomacao.com.br"
+    ],
+    "name": "Laiza Padilha",
+    "email": "laiza.padilha@jfautomacao.com.br",
+    "phone": "(XX) X XXXX-XXXX",
+    "photo": "",
+    "department": 2,
+    "is_manager": false,
+    "is_active": true,
+    "created_at": "2025-11-03T12:22:48.000Z"
+  }
+},
+{
+  "model": "automation.project",
+  "pk": 2,
+  "fields": {
+    "name": "MARKETING",
+    "code": "",
+    "cost_center": "900000",
+    "location": "Goiânia - GO",
+    "is_active": true
+  }
+},
+{
+  "model": "automation.project",
+  "pk": 3,
+  "fields": {
+    "name": "ORÇAMENTOS",
+    "code": "",
+    "cost_center": "900001",
+    "location": "Goiânia/GO",
+    "is_active": true
+  }
+},
+{
+  "model": "automation.project",
+  "pk": 4,
+  "fields": {
+    "name": "MATEC - OBRA SISTEMAS ESPECIAIS - ACHÉ FARMACÊUTICA",
+    "code": "",
+    "cost_center": "900002",
+    "location": "Cabo de Santo Agostinho - PE",
+    "is_active": true
+  }
+},
+{
+  "model": "automation.project",
+  "pk": 5,
+  "fields": {
+    "name": "AGROPALMA - AUTOMAÇÃO BIODIESEL",
+    "code": "",
+    "cost_center": "901311",
+    "location": "Belém - PA",
+    "is_active": true
+  }
+},
+{
+  "model": "automation.project",
+  "pk": 6,
+  "fields": {
+    "name": "TECFRIO - AUTOMAÇÃO HVAC - SHOPPING ARAGUAIA",
+    "code": "",
+    "cost_center": "90xxxx",
+    "location": "Goiânia/GO",
+    "is_active": true
+  }
+},
+{
+  "model": "automation.project",
+  "pk": 7,
+  "fields": {
+    "name": "FLUXO ENGENHARIA - AUTOMAÇÃO HVAC P10 ANTIBIÓTICOS - ACHÉ FARMACÊUTICA",
+    "code": "",
+    "cost_center": "901325",
+    "location": "Anápolis - GO",
+    "is_active": true
+  }
+},
+{
+  "model": "automation.project",
+  "pk": 8,
+  "fields": {
+    "name": "ACHÉ - AUTOMAÇÃO INTERTRAVAMENTO PORTAS P10 ANTIBIÓTICOS",
+    "code": "",
+    "cost_center": "901385",
+    "location": "Anápolis - GO",
+    "is_active": true
+  }
+},
+{
+  "model": "automation.project",
+  "pk": 9,
+  "fields": {
+    "name": "NÃO SE APLICA",
+    "code": "",
+    "cost_center": "000000",
+    "location": "",
+    "is_active": true
+  }
+},
+{
+  "model": "automation.milestone",
+  "pk": 1,
+  "fields": {
+    "name": "1. PREMISSAS",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.milestone",
+  "pk": 2,
+  "fields": {
+    "name": "2. ELABORAÇÃO DE DOCUMENTOS",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.milestone",
+  "pk": 3,
+  "fields": {
+    "name": "3. AQUISIÇÃO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.milestone",
+  "pk": 4,
+  "fields": {
+    "name": "4. DESENVOLVIMENTO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.milestone",
+  "pk": 5,
+  "fields": {
+    "name": "5. COMISSIONAMENTO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.milestone",
+  "pk": 6,
+  "fields": {
+    "name": "6. START-UP",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.milestone",
+  "pk": 7,
+  "fields": {
+    "name": "7. TREINAMENTO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.milestone",
+  "pk": 8,
+  "fields": {
+    "name": "8. ENCERRAMENTO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.milestone",
+  "pk": 9,
+  "fields": {
+    "name": "9. MANUTENÇÃO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 1,
+  "fields": {
+    "milestone": 1,
+    "name": "1.1 INÍCIO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 2,
+  "fields": {
+    "milestone": 1,
+    "name": "1.2 ORGANIZAÇÃO DOCUMENTOS DP X RH",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 3,
+  "fields": {
+    "milestone": 1,
+    "name": "1.3 COLETAR DOCUMENTOS DE PROJETOS",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 4,
+  "fields": {
+    "milestone": 1,
+    "name": "1.4 ACOMPANHAMENTO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 5,
+  "fields": {
+    "milestone": 2,
+    "name": "2.1 LISTA DE I/O",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 6,
+  "fields": {
+    "milestone": 2,
+    "name": "2.2 TOPOLOGIA DE REDE",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 7,
+  "fields": {
+    "milestone": 2,
+    "name": "2.3 REQUISITOS DE AUTOMAÇÃO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 8,
+  "fields": {
+    "milestone": 2,
+    "name": "2.4 DESCRITIVO OPERACIONAL",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 9,
+  "fields": {
+    "milestone": 3,
+    "name": "3.1 LICENÇAS DE SOFTWARE",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 10,
+  "fields": {
+    "milestone": 3,
+    "name": "3.2 COMPUTADOR",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 11,
+  "fields": {
+    "milestone": 4,
+    "name": "4.1 PREPARAÇÃO DE COMPUTADOR ES",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 12,
+  "fields": {
+    "milestone": 4,
+    "name": "4.2 PREPARAÇÃO DE COMPUTADOR OS",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 13,
+  "fields": {
+    "milestone": 4,
+    "name": "4.3 DESENHOS GRÁFICOS BIM/CAD",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 14,
+  "fields": {
+    "milestone": 4,
+    "name": "4.4 LÓGICA DE PROGRAMAÇÃO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 15,
+  "fields": {
+    "milestone": 4,
+    "name": "4.5 SUPERVISÓRIO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 16,
+  "fields": {
+    "milestone": 5,
+    "name": "5.1 TAF - TESTE DE ACEITAÇÃO DE FÁBRICA",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 17,
+  "fields": {
+    "milestone": 5,
+    "name": "5.2 TAC - TESTE DE ACEITAÇÃO DE CAMPO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 18,
+  "fields": {
+    "milestone": 6,
+    "name": "6.1 TESTE OPERACIONAL",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 19,
+  "fields": {
+    "milestone": 6,
+    "name": "6.2 AJUSTES DE SOFTWARE E HARDWARE",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 20,
+  "fields": {
+    "milestone": 6,
+    "name": "6.3 VALIDAÇÃO DO SISTEMA IMPLANTADO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 21,
+  "fields": {
+    "milestone": 7,
+    "name": "7.1 TREINAMENTO OPERACIONAL",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 22,
+  "fields": {
+    "milestone": 7,
+    "name": "7.2 TREINAMENTO DA MANUTENÇÃO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 23,
+  "fields": {
+    "milestone": 8,
+    "name": "8.1 DATABOOK",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 24,
+  "fields": {
+    "milestone": 8,
+    "name": "8.2 VISITA NA ÁREA E APRESENTAÇÃO PARA O CLIENTE",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 25,
+  "fields": {
+    "milestone": 8,
+    "name": "8.3 ACEITE TÉCNICO",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 26,
+  "fields": {
+    "milestone": 4,
+    "name": "4.6 IHM",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 27,
+  "fields": {
+    "milestone": 4,
+    "name": "4.7 INVERSORES",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.generalactivity",
+  "pk": 28,
+  "fields": {
+    "milestone": 4,
+    "name": "4.8 SOFT STARTER",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 1,
+  "fields": {
+    "general": 1,
+    "name": "1.1.1 Reunião Kick-Off",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 2,
+  "fields": {
+    "general": 1,
+    "name": "1.1.2 Elaborar ATA de Reunião",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 3,
+  "fields": {
+    "general": 1,
+    "name": "1.1.3 Elaborar Mapa de Comunicação",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 4,
+  "fields": {
+    "general": 2,
+    "name": "1.2.1 Pedir ao cliente documentos orientação para Integração de Pessoas",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 5,
+  "fields": {
+    "general": 2,
+    "name": "1.2.3 Pedir ao RH da JF Automação para que envie os documentos para Integração d",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 6,
+  "fields": {
+    "general": 2,
+    "name": "1.2.2 Levantar nomes dos funcionários que irão participar do Start-up no Cliente",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 7,
+  "fields": {
+    "general": 3,
+    "name": "1.3.1 Lista de carga",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 8,
+  "fields": {
+    "general": 3,
+    "name": "1.3.2 Lista de Instrumentos",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 9,
+  "fields": {
+    "general": 3,
+    "name": "1.3.3 Fluxograma do Sistema (P&ID)",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 10,
+  "fields": {
+    "general": 3,
+    "name": "1.3.4 Backup projeto",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 11,
+  "fields": {
+    "general": 3,
+    "name": "1.3.5 Lista de IP's",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 12,
+  "fields": {
+    "general": 3,
+    "name": "1.3.6 Nome do Computador e usuário logon do Windows",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 13,
+  "fields": {
+    "general": 3,
+    "name": "1.3.7 Usuários, níveis de hierarquia e definições das ações e monitoramento, para acesso ao sistema IHM",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 14,
+  "fields": {
+    "general": 4,
+    "name": "1.4 Realização de Medição",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 15,
+  "fields": {
+    "general": 5,
+    "name": "2.1.1 Levantar tipos de instrumentos citados no Edital enviado pelo Cliente",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 16,
+  "fields": {
+    "general": 5,
+    "name": "2.1.2 Levantar Datasheet Instrumentos para coletar tipo de sinal de saída",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 17,
+  "fields": {
+    "general": 5,
+    "name": "2.1.3 Comparar instrumentos Edital x Fluxograma x Lista de materiais orçamentária JF",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 18,
+  "fields": {
+    "general": 5,
+    "name": "2.1.4 Coletar Tags definitivos com Cliente",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 19,
+  "fields": {
+    "general": 5,
+    "name": "2.1.5 Criar planilha Lista de I/O",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 20,
+  "fields": {
+    "general": 6,
+    "name": "2.2.1 Coletar lista de materiais de Hardware de Automação",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 21,
+  "fields": {
+    "general": 6,
+    "name": "2.2.2 Coletar diagrama elétrico para inserir Tags de projeto",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 22,
+  "fields": {
+    "general": 6,
+    "name": "2.2.3 Coletar Endereços IP com Cliente",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 23,
+  "fields": {
+    "general": 6,
+    "name": "2.2.4 Criar projeto da Topologia de Rede",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 24,
+  "fields": {
+    "general": 7,
+    "name": "2.3.3 Especificar usuários, níveis de hierarquia e definições das ações e monitoramento, para acesso ao sistema IHM/Scad",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 25,
+  "fields": {
+    "general": 7,
+    "name": "2.3.4 Descrever o desenvolvimento do sistema: funcionamento, controle, monitoramento, forma de operação via IHM/Scada",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 26,
+  "fields": {
+    "general": 8,
+    "name": "2.4.1 Descrever forma de operação do sistema",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 27,
+  "fields": {
+    "general": 8,
+    "name": "2.4.2 Descrever como operar o sistema",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 28,
+  "fields": {
+    "general": 8,
+    "name": "2.4.3 Descrever falhas e diagnósticos",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 29,
+  "fields": {
+    "general": 8,
+    "name": "2.4.4 Inserir telas de IHM/Scada",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 30,
+  "fields": {
+    "general": 9,
+    "name": "3.1.1 Adquirir Licença",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 31,
+  "fields": {
+    "general": 10,
+    "name": "3.2.1 Adquirir Computador",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 32,
+  "fields": {
+    "general": 11,
+    "name": "4.1.1 ES - Instalar sistema operacional e pacotes adicionais Windows",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 33,
+  "fields": {
+    "general": 11,
+    "name": "4.1.2 ES - Instalar Plataforma de Desenvolvimento de Automação",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 34,
+  "fields": {
+    "general": 12,
+    "name": "4.2.2 OS - Instalar Plataforma de Desenvolvimento/Operação de Automação",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 35,
+  "fields": {
+    "general": 13,
+    "name": "4.3.1  Desenhar equipamentos em plataforma CAD",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 36,
+  "fields": {
+    "general": 14,
+    "name": "4.4.1 Configurar hardwares: Periféricos e Redes",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 37,
+  "fields": {
+    "general": 14,
+    "name": "4.4.2 Criar Tags na tabela de simbologia",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 38,
+  "fields": {
+    "general": 14,
+    "name": "4.4.3 Preparar pastas e subpastas de organização",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 39,
+  "fields": {
+    "general": 14,
+    "name": "4.4.4 Preparar biblioteca",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 40,
+  "fields": {
+    "general": 14,
+    "name": "4.4.5 Preparar OB's de Falhas, das Rotinas Convencionais e Rotinas Cíclicas",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 41,
+  "fields": {
+    "general": 14,
+    "name": "4.4.6 Preparar DB's de indexação",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 42,
+  "fields": {
+    "general": 14,
+    "name": "4.4.7 Criar e configurar Objetos Tecnológicos",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 43,
+  "fields": {
+    "general": 14,
+    "name": "4.4.8 Parametrizar Drives Offline",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 44,
+  "fields": {
+    "general": 15,
+    "name": "4.5.1 Desenvolver Supervisório",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 45,
+  "fields": {
+    "general": 13,
+    "name": "4.3.2 Renderizar desenhos CAD",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 46,
+  "fields": {
+    "general": 26,
+    "name": "4.6.1 Desenvolver IHM",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 47,
+  "fields": {
+    "general": 27,
+    "name": "4.7.1 Configuração de Inversores",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 48,
+  "fields": {
+    "general": 28,
+    "name": "4.8.1 Configuração de Soft Starter",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 49,
+  "fields": {
+    "general": 18,
+    "name": "6.1.1 Teste de Painel",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 50,
+  "fields": {
+    "general": 18,
+    "name": "6.1.2 Simulação de Lógica de Programação",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 51,
+  "fields": {
+    "general": 18,
+    "name": "6.1.3 Simulação de Operação com IHM/Supervisório",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 52,
+  "fields": {
+    "general": 17,
+    "name": "5.2.1 Teste de Atuadores",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 53,
+  "fields": {
+    "general": 17,
+    "name": "5.2.2 Teste de Instrumentos",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 54,
+  "fields": {
+    "general": 17,
+    "name": "5.2.3 Teste de Motores",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 55,
+  "fields": {
+    "general": 17,
+    "name": "5.2.4 Teste de Rede de Comunicação",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 56,
+  "fields": {
+    "general": 17,
+    "name": "5.2.5 Teste de IHM/Supervisório",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.specificactivity",
+  "pk": 57,
+  "fields": {
+    "general": 17,
+    "name": "5.2.6 Validação de Lógica",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "automation.workday",
+  "pk": 27,
+  "fields": {
+    "collaborator": 1,
+    "date": "2025-11-03",
+    "started_at": "2025-11-03T12:07:08.785Z",
+    "ended_at": null,
+    "is_open": true
+  }
+},
+{
+  "model": "automation.workday",
+  "pk": 28,
+  "fields": {
+    "collaborator": 3,
+    "date": "2025-11-03",
+    "started_at": "2025-11-03T16:38:43.107Z",
+    "ended_at": "2025-11-03T16:38:45.323Z",
+    "is_open": false
+  }
+},
+{
+  "model": "epe.project",
+  "pk": 1,
+  "fields": {
+    "name": "PROSERV - PROJETO ALCA - BRAINFARMA",
+    "code": "500001",
+    "cost_center": "",
+    "location": "ANÁPOLIS/GO",
+    "is_active": true
+  }
+},
+{
+  "model": "epe.project",
+  "pk": 2,
+  "fields": {
+    "name": "ABELV - PROJETO OURO - BRAINFARMA",
+    "code": "500002",
+    "cost_center": "",
+    "location": "ITAPECERICA DA SERRA/SP",
+    "is_active": true
+  }
+},
+{
+  "model": "epe.generalactivity",
+  "pk": 1,
+  "fields": {
+    "name": "LAYOUT",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.generalactivity",
+  "pk": 2,
+  "fields": {
+    "name": "DIAGRAMA",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.generalactivity",
+  "pk": 3,
+  "fields": {
+    "name": "AS BUILT",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.generalactivity",
+  "pk": 4,
+  "fields": {
+    "name": "TREINAMENTO",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.generalactivity",
+  "pk": 5,
+  "fields": {
+    "name": "FOTOGRAFIA  DO PAINEL",
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.generalactivity",
+  "pk": 6,
+  "fields": {
+    "name": "ELABORAÇÃO DE DOCUMENTO",
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.generalactivity",
+  "pk": 7,
+  "fields": {
+    "name": "ACABAMENTO",
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.generalactivity",
+  "pk": 8,
+  "fields": {
+    "name": "ESTUDO",
+    "order": 7,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.panelsize",
+  "pk": 1,
+  "fields": {
+    "name": "ATÉ 760x600x210",
+    "order": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.panelsize",
+  "pk": 2,
+  "fields": {
+    "name": "ATÉ 1400x1000x300",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.panelsize",
+  "pk": 3,
+  "fields": {
+    "name": "1 ARMÁRIO AUTOPORTANTE",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.panelsize",
+  "pk": 4,
+  "fields": {
+    "name": "2 ARMÁRIOS AUTOPORTANTES",
+    "order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.panelsize",
+  "pk": 5,
+  "fields": {
+    "name": "3 ARMÁRIOS AUTOPORTANTES",
+    "order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.panelsize",
+  "pk": 6,
+  "fields": {
+    "name": "4 ARMÁRIOS AUTOPORTANTES",
+    "order": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.panelsize",
+  "pk": 7,
+  "fields": {
+    "name": "5 ARMÁRIOS AUTOPORTANTE",
+    "order": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.panelsize",
+  "pk": 8,
+  "fields": {
+    "name": "7 ARMÁRIOS AUTOPORTANTE",
+    "order": 7,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.panelsize",
+  "pk": 9,
+  "fields": {
+    "name": "8 ARMÁRIOS AUTOPORTANTE",
+    "order": 8,
+    "is_active": true
+  }
+},
+{
+  "model": "epe.workday",
+  "pk": 5,
+  "fields": {
+    "collaborator": 2,
+    "date": "2025-10-16",
+    "started_at": "2025-10-16T11:53:07.953Z",
+    "ended_at": null,
+    "is_open": true
+  }
+},
+{
+  "model": "epe.workday",
+  "pk": 6,
+  "fields": {
+    "collaborator": 2,
+    "date": "2025-11-03",
+    "started_at": "2025-11-03T12:05:13.851Z",
+    "ended_at": "2025-11-03T12:23:50.404Z",
+    "is_open": false
+  }
+},
+{
+  "model": "epe.activity",
+  "pk": 8,
+  "fields": {
+    "collaborator": 2,
+    "workday": 5,
+    "project": 2,
+    "panel_name": "TESTE-01",
+    "general": 1,
+    "panel_size": 1,
+    "description": "",
+    "started_at": "2025-10-16T11:53:38.123Z",
+    "finished_at": "2025-10-16T11:54:00.002Z",
+    "is_active": false
+  }
+},
+{
+  "model": "epe.activitysession",
+  "pk": 10,
+  "fields": {
+    "activity": 8,
+    "started_at": "2025-10-16T11:53:38.127Z",
+    "ended_at": "2025-10-16T11:53:58.676Z"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 162,
+  "fields": {
+    "action_time": "2025-09-25T17:04:37.359Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "1",
+    "object_repr": "wever",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 163,
+  "fields": {
+    "action_time": "2025-09-25T17:04:57.103Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "6",
+    "object_repr": "weverton@jfenergia.com.br",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 164,
+  "fields": {
+    "action_time": "2025-09-25T17:08:50.220Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "1",
+    "object_repr": "Weverton Pedro",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Gestor do departamento\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 170,
+  "fields": {
+    "action_time": "2025-09-25T17:19:31.664Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "1",
+    "object_repr": "Weverton Pedro",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 171,
+  "fields": {
+    "action_time": "2025-09-25T17:51:09.733Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "7",
+    "object_repr": "arone.angelino@jfautomacao.com.br",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 172,
+  "fields": {
+    "action_time": "2025-09-25T17:51:32.982Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "5",
+    "object_repr": "Arone Angelino",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 173,
+  "fields": {
+    "action_time": "2025-09-25T17:57:22.972Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "7",
+    "object_repr": "arone.angelino@jfautomacao.com.br",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 174,
+  "fields": {
+    "action_time": "2025-09-25T17:57:30.912Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "rafael.fernandes@jfautomacao.com.br",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 175,
+  "fields": {
+    "action_time": "2025-09-25T18:57:22.231Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "8",
+    "object_repr": "francisco.terencio@jfenergia.com.br",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 176,
+  "fields": {
+    "action_time": "2025-09-25T18:58:09.809Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "6",
+    "object_repr": "Francisco Terêncio",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 177,
+  "fields": {
+    "action_time": "2025-09-25T18:58:41.267Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "9",
+    "object_repr": "rogerio.lima@jfenergia.com.br",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 178,
+  "fields": {
+    "action_time": "2025-09-25T18:59:01.681Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "7",
+    "object_repr": "Rogério Lima",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 179,
+  "fields": {
+    "action_time": "2025-09-26T11:15:34.230Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "notice"
+    ],
+    "object_id": "1",
+    "object_repr": "Banco de Horas (Informação)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 180,
+  "fields": {
+    "action_time": "2025-09-26T11:16:15.209Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "notice"
+    ],
+    "object_id": "1",
+    "object_repr": "Banco de Horas (Informação)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Fim da exibi\\u00e7\\u00e3o\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 181,
+  "fields": {
+    "action_time": "2025-09-26T11:16:55.365Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "notice"
+    ],
+    "object_id": "1",
+    "object_repr": "Banco de Horas (Informação)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 182,
+  "fields": {
+    "action_time": "2025-09-26T11:22:09.533Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "notice"
+    ],
+    "object_id": "2",
+    "object_repr": "Teste (Aviso)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 183,
+  "fields": {
+    "action_time": "2025-09-26T11:53:42.721Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "notice"
+    ],
+    "object_id": "3",
+    "object_repr": "Aviso de Folga (Informação)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 184,
+  "fields": {
+    "action_time": "2025-09-26T11:57:47.642Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "35",
+    "object_repr": "Rafael Fernandes — 4. DESENVOLVIMENTO › 4. DESENVOLVIMENTO › 4.5 SUPERVISÓRIO › 4.5.1 Desenvolver Supervisório",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 185,
+  "fields": {
+    "action_time": "2025-09-26T11:57:47.642Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "34",
+    "object_repr": "Rafael Fernandes — 2. ELABORAÇÃO DE DOCUMENTOS › 2. ELABORAÇÃO DE DOCUMENTOS › 2.1 LISTA DE I/O › 2.1.5 Criar planilha Lista de I/O",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 186,
+  "fields": {
+    "action_time": "2025-09-26T11:57:47.642Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "33",
+    "object_repr": "Weverton Pedro — 1. PREMISSAS › 1. PREMISSAS › 1.1 INÍCIO › 1.1.1 Reunião Kick-Off",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 187,
+  "fields": {
+    "action_time": "2025-09-26T11:57:47.642Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "32",
+    "object_repr": "Rafael Fernandes — 2. ELABORAÇÃO DE DOCUMENTOS › 2. ELABORAÇÃO DE DOCUMENTOS › 2.1 LISTA DE I/O › 2.1.5 Criar planilha Lista de I/O",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 188,
+  "fields": {
+    "action_time": "2025-09-26T12:09:32.035Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "36",
+    "object_repr": "Rafael Fernandes — Levantamento / Teste",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 189,
+  "fields": {
+    "action_time": "2025-09-26T13:31:47.918Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "10",
+    "object_repr": "amanda.duarte@jfautomacao.com.br",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 190,
+  "fields": {
+    "action_time": "2025-09-26T13:32:16.639Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "collaborator"
+    ],
+    "object_id": "1",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 191,
+  "fields": {
+    "action_time": "2025-09-26T13:46:46.519Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "1",
+    "object_repr": "ATÉ 760x600x210",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 192,
+  "fields": {
+    "action_time": "2025-09-26T13:46:54.403Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "2",
+    "object_repr": "ATÉ 1400x1000x300",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 193,
+  "fields": {
+    "action_time": "2025-09-26T13:46:58.882Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "2",
+    "object_repr": "ATÉ 1400x1000x300",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 194,
+  "fields": {
+    "action_time": "2025-09-26T13:47:07.123Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "3",
+    "object_repr": "1 ARMÁRIO AUTOPORTAN",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 195,
+  "fields": {
+    "action_time": "2025-09-26T13:47:15.612Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "4",
+    "object_repr": "2 ARMÁRIOS AUTOPORTA",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 196,
+  "fields": {
+    "action_time": "2025-09-26T13:47:19.388Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "5",
+    "object_repr": "3 ARMÁRIOS AUTOPORTA",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 197,
+  "fields": {
+    "action_time": "2025-09-26T13:47:24.604Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "6",
+    "object_repr": "4ARMÁRIOS AUTOPORTA",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 198,
+  "fields": {
+    "action_time": "2025-09-26T13:47:40.452Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "6",
+    "object_repr": "4 ARM. AUTOPORTANTES",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tamanho do painel\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 199,
+  "fields": {
+    "action_time": "2025-09-26T13:48:26.441Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "4",
+    "object_repr": "2 ARMÁRIOS AUTOPORTANTES",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tamanho do painel\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 200,
+  "fields": {
+    "action_time": "2025-09-26T13:48:30.763Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "5",
+    "object_repr": "3 ARMÁRIOS AUTOPORTANTES",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tamanho do painel\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 201,
+  "fields": {
+    "action_time": "2025-09-26T13:48:36.250Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "6",
+    "object_repr": "4 ARMÁRIOS AUTOPORTANTES",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tamanho do painel\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 202,
+  "fields": {
+    "action_time": "2025-09-26T13:48:42.051Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "3",
+    "object_repr": "1 ARMÁRIO AUTOPORTANTE",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tamanho do painel\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 203,
+  "fields": {
+    "action_time": "2025-09-26T13:48:49.739Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "4",
+    "object_repr": "2 ARMÁRIOS AUTOPORTANTES",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 204,
+  "fields": {
+    "action_time": "2025-09-26T13:48:49.741Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "5",
+    "object_repr": "3 ARMÁRIOS AUTOPORTANTES",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 205,
+  "fields": {
+    "action_time": "2025-09-26T13:48:49.742Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "6",
+    "object_repr": "4 ARMÁRIOS AUTOPORTANTES",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 206,
+  "fields": {
+    "action_time": "2025-09-26T13:49:00.317Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "7",
+    "object_repr": "5 ARMÁRIOS AUTOPORTANTE",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 207,
+  "fields": {
+    "action_time": "2025-09-26T13:49:03.187Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "7",
+    "object_repr": "5 ARMÁRIOS AUTOPORTANTE",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 208,
+  "fields": {
+    "action_time": "2025-09-26T13:49:15.433Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "8",
+    "object_repr": "7 ARMÁRIOS AUTOPORTANTE",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 209,
+  "fields": {
+    "action_time": "2025-09-26T13:49:18.501Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "8",
+    "object_repr": "7 ARMÁRIOS AUTOPORTANTE",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 210,
+  "fields": {
+    "action_time": "2025-09-26T13:49:27.836Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "object_id": "9",
+    "object_repr": "8 ARMÁRIOS AUTOPORTANTE",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 211,
+  "fields": {
+    "action_time": "2025-09-26T13:50:07.128Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "project"
+    ],
+    "object_id": "1",
+    "object_repr": "PROSERV - PROJETO ALCA - BRAINFARMA",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 212,
+  "fields": {
+    "action_time": "2025-09-26T13:50:15.396Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "project"
+    ],
+    "object_id": "1",
+    "object_repr": "PROSERV - PROJETO ALCA - BRAINFARMA",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"C\\u00f3digo interno\", \"Centro de custo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 213,
+  "fields": {
+    "action_time": "2025-09-26T13:50:57.288Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "project"
+    ],
+    "object_id": "2",
+    "object_repr": "ABELV - PROJETO OURO - BRAINFARMA",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 214,
+  "fields": {
+    "action_time": "2025-09-26T13:51:22.910Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "1",
+    "object_repr": "LAYOUT",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 215,
+  "fields": {
+    "action_time": "2025-09-26T13:51:32.311Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "2",
+    "object_repr": "DIAGRAMA",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 216,
+  "fields": {
+    "action_time": "2025-09-26T13:52:13.080Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "3",
+    "object_repr": "AS BUILT",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 217,
+  "fields": {
+    "action_time": "2025-09-26T13:52:19.098Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "4",
+    "object_repr": "TREINAMENTO",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 218,
+  "fields": {
+    "action_time": "2025-09-26T13:52:25.251Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "5",
+    "object_repr": "FOTOGRAFIA  DO PAINEL",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 219,
+  "fields": {
+    "action_time": "2025-09-26T13:52:37.160Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "6",
+    "object_repr": "ELABORAÇÃO DE DOCUMENTO",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 220,
+  "fields": {
+    "action_time": "2025-09-26T13:55:12.962Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "7",
+    "object_repr": "ACABAMENTO",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 221,
+  "fields": {
+    "action_time": "2025-09-26T13:55:21.019Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "8",
+    "object_repr": "ESTUDO",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 222,
+  "fields": {
+    "action_time": "2025-09-26T14:10:23.749Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "2",
+    "object_repr": "DIAGRAMA",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 223,
+  "fields": {
+    "action_time": "2025-09-26T14:10:32.503Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "3",
+    "object_repr": "AS BUILT",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 224,
+  "fields": {
+    "action_time": "2025-09-26T14:10:39.619Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "4",
+    "object_repr": "TREINAMENTO",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 225,
+  "fields": {
+    "action_time": "2025-09-26T14:10:42.824Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "5",
+    "object_repr": "FOTOGRAFIA  DO PAINEL",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 226,
+  "fields": {
+    "action_time": "2025-09-26T14:15:36.854Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "7",
+    "object_repr": "ACABAMENTO",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 227,
+  "fields": {
+    "action_time": "2025-09-26T14:15:36.855Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "6",
+    "object_repr": "ELABORAÇÃO DE DOCUMENTO",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 228,
+  "fields": {
+    "action_time": "2025-09-26T14:15:36.855Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "object_id": "8",
+    "object_repr": "ESTUDO",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Ordem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 229,
+  "fields": {
+    "action_time": "2025-09-26T17:05:21.554Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "8",
+    "object_repr": "amanda.duarte@jfautomacao.com.br",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 230,
+  "fields": {
+    "action_time": "2025-09-26T17:08:22.643Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "10",
+    "object_repr": "amanda.duarte@jfautomacao.com.br",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 231,
+  "fields": {
+    "action_time": "2025-09-26T17:08:32.985Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "10",
+    "object_repr": "amanda.duarte@jfautomacao.com.br",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 232,
+  "fields": {
+    "action_time": "2025-09-26T17:08:50.763Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "collaborator"
+    ],
+    "object_id": "1",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 233,
+  "fields": {
+    "action_time": "2025-09-26T17:13:35.258Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "13",
+    "object_repr": "Amanda Duarte — 2025-09-26 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 234,
+  "fields": {
+    "action_time": "2025-09-26T17:13:40.916Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "9",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 235,
+  "fields": {
+    "action_time": "2025-09-26T17:13:45.809Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "collaborator"
+    ],
+    "object_id": "1",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 236,
+  "fields": {
+    "action_time": "2025-09-26T17:17:41.407Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "10",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 237,
+  "fields": {
+    "action_time": "2025-09-26T17:31:05.370Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "11",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 238,
+  "fields": {
+    "action_time": "2025-09-26T17:40:45.100Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "12",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 239,
+  "fields": {
+    "action_time": "2025-09-26T18:10:26.468Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "collaborator"
+    ],
+    "object_id": "2",
+    "object_repr": "Weverton Pedro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 240,
+  "fields": {
+    "action_time": "2025-09-26T18:10:30.922Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "13",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 241,
+  "fields": {
+    "action_time": "2025-09-26T19:27:01.909Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "14",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 242,
+  "fields": {
+    "action_time": "2025-09-29T11:04:20.947Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "collaborator"
+    ],
+    "object_id": "3",
+    "object_repr": "Weverton Pedro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 243,
+  "fields": {
+    "action_time": "2025-09-29T11:04:27.401Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "15",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 244,
+  "fields": {
+    "action_time": "2025-09-29T15:01:45.887Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "collaborator"
+    ],
+    "object_id": "4",
+    "object_repr": "Weverton Pedro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 245,
+  "fields": {
+    "action_time": "2025-09-29T16:52:39.249Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "collaborator"
+    ],
+    "object_id": "5",
+    "object_repr": "Weverton Pedro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 246,
+  "fields": {
+    "action_time": "2025-09-30T11:18:11.945Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "16",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 247,
+  "fields": {
+    "action_time": "2025-09-30T11:28:38.811Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "notice"
+    ],
+    "object_id": "1",
+    "object_repr": "Teste (Informação)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 248,
+  "fields": {
+    "action_time": "2025-09-30T11:29:33.762Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "notice"
+    ],
+    "object_id": "1",
+    "object_repr": "Teste (Informação)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 249,
+  "fields": {
+    "action_time": "2025-09-30T11:33:20.670Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "17",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 250,
+  "fields": {
+    "action_time": "2025-09-30T11:39:10.148Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "collaborator"
+    ],
+    "object_id": "1",
+    "object_repr": "Amanda Duarte",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Gestor do departamento\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 251,
+  "fields": {
+    "action_time": "2025-09-30T12:50:49.224Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "19",
+    "object_repr": "Weverton Pedro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 252,
+  "fields": {
+    "action_time": "2025-09-30T12:51:09.164Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "20",
+    "object_repr": "Weverton Pedro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 253,
+  "fields": {
+    "action_time": "2025-09-30T12:51:20.817Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "collaborator"
+    ],
+    "object_id": "21",
+    "object_repr": "Weverton Pedro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 254,
+  "fields": {
+    "action_time": "2025-09-30T14:33:44.564Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "department"
+    ],
+    "object_id": "1",
+    "object_repr": "Engenharia de Automação",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Slug\", \"Nome\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 255,
+  "fields": {
+    "action_time": "2025-09-30T14:34:01.696Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "department"
+    ],
+    "object_id": "2",
+    "object_repr": "Engenharia de Painéis Elétricos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 256,
+  "fields": {
+    "action_time": "2025-09-30T14:34:33.574Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "1",
+    "object_repr": "Weverton Pedro — Engenharia de Automação",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 257,
+  "fields": {
+    "action_time": "2025-09-30T14:35:07.017Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "2",
+    "object_repr": "Amanda Duarte — Engenharia de Painéis Elétricos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 258,
+  "fields": {
+    "action_time": "2025-09-30T14:35:25.447Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "38",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 7. TREINAMENTO › 7.1 TREINAMENTO OPERACIONAL",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 259,
+  "fields": {
+    "action_time": "2025-09-30T14:35:25.447Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "37",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 1. PREMISSAS › 1. PREMISSAS › 1.1 INÍCIO › 1.1.1 Reunião Kick-Off",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 260,
+  "fields": {
+    "action_time": "2025-09-30T14:38:49.621Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "project"
+    ],
+    "object_id": "8",
+    "object_repr": "ACHÉ - AUTOMAÇÃO INTERTRAVAMENTO PORTAS P10 ANTIBIÓTICOS",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 261,
+  "fields": {
+    "action_time": "2025-09-30T16:31:39.332Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "1",
+    "object_repr": "Weverton Pedro — Engenharia de Automação",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Departamento\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 262,
+  "fields": {
+    "action_time": "2025-09-30T17:28:53.209Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "1",
+    "object_repr": "Weverton Pedro — Engenharia de Automação",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Departamento\", \"Gestor do departamento?\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 263,
+  "fields": {
+    "action_time": "2025-09-30T17:31:38.072Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "3",
+    "object_repr": "Rafael Fernandes — Engenharia de Automação",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 264,
+  "fields": {
+    "action_time": "2025-09-30T19:41:42.620Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "42",
+    "object_repr": "Rafael Fernandes — Engenharia de Automação — 1. PREMISSAS › 1. PREMISSAS › 1.1 INÍCIO › 1.1.1 Reunião Kick-Off",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 265,
+  "fields": {
+    "action_time": "2025-09-30T19:41:42.620Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "41",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 1. PREMISSAS › 1. PREMISSAS › 1.1 INÍCIO › 1.1.1 Reunião Kick-Off",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 266,
+  "fields": {
+    "action_time": "2025-09-30T19:41:42.620Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "40",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 1. PREMISSAS › 1. PREMISSAS › 1.1 INÍCIO › 1.1.1 Reunião Kick-Off",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 267,
+  "fields": {
+    "action_time": "2025-09-30T19:43:40.933Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "19",
+    "object_repr": "Rafael Fernandes — Engenharia de Automação — 2025-09-30 (fechado)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 268,
+  "fields": {
+    "action_time": "2025-09-30T19:43:40.933Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "17",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 2025-09-30 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 269,
+  "fields": {
+    "action_time": "2025-09-30T19:43:40.933Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "14",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 2025-09-26 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 270,
+  "fields": {
+    "action_time": "2025-09-30T19:43:40.933Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "10",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 2025-09-25 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 271,
+  "fields": {
+    "action_time": "2025-09-30T20:01:13.153Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "46",
+    "object_repr": "Rafael Fernandes — Engenharia de Automação — 1. PREMISSAS › 1. PREMISSAS › 1.1 INÍCIO › 1.1.1 Reunião Kick-Off",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 272,
+  "fields": {
+    "action_time": "2025-09-30T20:01:13.153Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "45",
+    "object_repr": "Rafael Fernandes — Engenharia de Automação — 4. DESENVOLVIMENTO › 4. DESENVOLVIMENTO › 4.5 SUPERVISÓRIO › 4.5.1 Desenvolver Supervisório",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 273,
+  "fields": {
+    "action_time": "2025-09-30T20:01:13.153Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "44",
+    "object_repr": "Rafael Fernandes — Engenharia de Automação — 4. DESENVOLVIMENTO › 4. DESENVOLVIMENTO › 4.4 LÓGICA DE PROGRAMAÇÃO › 4.4.2 Criar Tags na tabela de simbologia",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 274,
+  "fields": {
+    "action_time": "2025-09-30T20:01:13.153Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "object_id": "43",
+    "object_repr": "Rafael Fernandes — Engenharia de Automação — 5. COMISSIONAMENTO › 5.1 TAF - TESTE DE ACEITAÇÃO DE FÁBRICA",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 275,
+  "fields": {
+    "action_time": "2025-09-30T20:01:53.835Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "workday"
+    ],
+    "object_id": "4",
+    "object_repr": "Amanda Duarte — Engenharia de Painéis Elétricos — 2025-09-30 (fechado)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 276,
+  "fields": {
+    "action_time": "2025-09-30T20:01:53.835Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "workday"
+    ],
+    "object_id": "3",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 2025-09-30 (fechado)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 277,
+  "fields": {
+    "action_time": "2025-09-30T20:01:53.835Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "workday"
+    ],
+    "object_id": "2",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 2025-09-29 (fechado)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 278,
+  "fields": {
+    "action_time": "2025-09-30T20:01:53.835Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "epe",
+      "workday"
+    ],
+    "object_id": "1",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 2025-09-26 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 279,
+  "fields": {
+    "action_time": "2025-09-30T20:02:01.633Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "21",
+    "object_repr": "Rafael Fernandes — Engenharia de Automação — 2025-10-01 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 280,
+  "fields": {
+    "action_time": "2025-09-30T20:02:01.633Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "20",
+    "object_repr": "Rafael Fernandes — Engenharia de Automação — 2025-09-30 (fechado)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 281,
+  "fields": {
+    "action_time": "2025-09-30T20:02:01.633Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "22",
+    "object_repr": "Rafael Fernandes — Engenharia de Automação — 2025-09-29 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 282,
+  "fields": {
+    "action_time": "2025-10-16T11:39:55.816Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "23",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 2025-10-16 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 283,
+  "fields": {
+    "action_time": "2025-10-16T11:41:38.774Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "4",
+    "object_repr": "Arone Angelino — Engenharia de Automação",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 284,
+  "fields": {
+    "action_time": "2025-10-16T11:42:06.701Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "5",
+    "object_repr": "Francisco — Engenharia de Automação",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 285,
+  "fields": {
+    "action_time": "2025-10-16T11:42:37.745Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "6",
+    "object_repr": "Rogério Lima — Engenharia de Automação",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 286,
+  "fields": {
+    "action_time": "2025-10-16T11:43:35.035Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "2",
+    "object_repr": "Amanda Duarte — Engenharia de Painéis Elétricos",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Gestor do departamento?\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 287,
+  "fields": {
+    "action_time": "2025-10-16T11:46:01.466Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "24",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 2025-10-16 (fechado)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 288,
+  "fields": {
+    "action_time": "2025-10-16T11:46:01.466Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "11",
+    "object_repr": "Arone Angelino — Engenharia de Automação — 2025-09-26 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 289,
+  "fields": {
+    "action_time": "2025-10-16T11:46:01.466Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "9",
+    "object_repr": "Arone Angelino — Engenharia de Automação — 2025-09-25 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 290,
+  "fields": {
+    "action_time": "2025-10-16T11:46:46.257Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "7",
+    "object_repr": "Rodrigo Ferreira — Engenharia de Automação",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 291,
+  "fields": {
+    "action_time": "2025-10-16T11:46:54.030Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "5",
+    "object_repr": "Francisco Terêncio — Engenharia de Automação",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 292,
+  "fields": {
+    "action_time": "2025-10-17T14:45:12.887Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "8",
+    "object_repr": "francisco.santos@jfenergia.com.br",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 293,
+  "fields": {
+    "action_time": "2025-10-17T14:45:24.794Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "5",
+    "object_repr": "Francisco Terêncio — Engenharia de Automação",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 294,
+  "fields": {
+    "action_time": "2025-10-17T14:45:35.369Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "5",
+    "object_repr": "Francisco Terêncio — Engenharia de Automação",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"E-mail\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 295,
+  "fields": {
+    "action_time": "2025-10-17T14:55:26.438Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "5",
+    "object_repr": "Francisco Terêncio — Engenharia de Automação",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Gestor do departamento?\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 296,
+  "fields": {
+    "action_time": "2025-10-23T17:07:42.467Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "26",
+    "object_repr": "Francisco Terêncio — Engenharia de Automação — 2025-10-17 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 297,
+  "fields": {
+    "action_time": "2025-10-23T17:07:42.467Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "object_id": "25",
+    "object_repr": "Weverton Pedro — Engenharia de Automação — 2025-10-16 (aberto)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 298,
+  "fields": {
+    "action_time": "2025-11-03T12:21:40.779Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "11",
+    "object_repr": "alexandre.nunes@jfautomacao.com.br",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 299,
+  "fields": {
+    "action_time": "2025-11-03T12:22:04.476Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "8",
+    "object_repr": "Alexandre Nunes — Engenharia de Painéis Elétricos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 300,
+  "fields": {
+    "action_time": "2025-11-03T12:22:27.935Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "12",
+    "object_repr": "laiza.padilha@jfautomacao.com.br",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 301,
+  "fields": {
+    "action_time": "2025-11-03T12:22:48.004Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "9",
+    "object_repr": "Laiza Padilha — Engenharia de Painéis Elétricos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 302,
+  "fields": {
+    "action_time": "2025-11-03T12:22:59.395Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "5",
+    "object_repr": "Francisco Terêncio — Engenharia de Automação",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Gestor do departamento?\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 303,
+  "fields": {
+    "action_time": "2025-11-03T17:44:16.424Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "1",
+    "object_repr": "Weverton Pedro — Engenharia de Automação",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 304,
+  "fields": {
+    "action_time": "2025-11-03T17:56:07.722Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "2",
+    "object_repr": "Amanda Duarte — Engenharia de Painéis Elétricos",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Gestor do departamento?\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 305,
+  "fields": {
+    "action_time": "2025-11-03T17:56:11.966Z",
+    "user": [
+      "wever"
+    ],
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "object_id": "2",
+    "object_repr": "Amanda Duarte — Engenharia de Painéis Elétricos",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Gestor do departamento?\"]}}]"
+  }
+}
+]

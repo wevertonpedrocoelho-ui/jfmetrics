@@ -1,0 +1,1073 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "common",
+    "model": "department"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "common",
+    "model": "collaborator"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "automation",
+    "model": "generalactivity"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "automation",
+    "model": "milestone"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "automation",
+    "model": "project"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "automation",
+    "model": "activity"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "automation",
+    "model": "activitysession"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "automation",
+    "model": "specificactivity"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "automation",
+    "model": "workday"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "epe",
+    "model": "generalactivity"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "epe",
+    "model": "panelsize"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "epe",
+    "model": "project"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "epe",
+    "model": "workday"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "epe",
+    "model": "activity"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "epe",
+    "model": "activitysession"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add department",
+    "content_type": [
+      "common",
+      "department"
+    ],
+    "codename": "add_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change department",
+    "content_type": [
+      "common",
+      "department"
+    ],
+    "codename": "change_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete department",
+    "content_type": [
+      "common",
+      "department"
+    ],
+    "codename": "delete_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view department",
+    "content_type": [
+      "common",
+      "department"
+    ],
+    "codename": "view_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add collaborator",
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "codename": "add_collaborator"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change collaborator",
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "codename": "change_collaborator"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete collaborator",
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "codename": "delete_collaborator"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view collaborator",
+    "content_type": [
+      "common",
+      "collaborator"
+    ],
+    "codename": "view_collaborator"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Atividade Geral",
+    "content_type": [
+      "automation",
+      "generalactivity"
+    ],
+    "codename": "add_generalactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Atividade Geral",
+    "content_type": [
+      "automation",
+      "generalactivity"
+    ],
+    "codename": "change_generalactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Atividade Geral",
+    "content_type": [
+      "automation",
+      "generalactivity"
+    ],
+    "codename": "delete_generalactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Atividade Geral",
+    "content_type": [
+      "automation",
+      "generalactivity"
+    ],
+    "codename": "view_generalactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Marco",
+    "content_type": [
+      "automation",
+      "milestone"
+    ],
+    "codename": "add_milestone"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Marco",
+    "content_type": [
+      "automation",
+      "milestone"
+    ],
+    "codename": "change_milestone"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Marco",
+    "content_type": [
+      "automation",
+      "milestone"
+    ],
+    "codename": "delete_milestone"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Marco",
+    "content_type": [
+      "automation",
+      "milestone"
+    ],
+    "codename": "view_milestone"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Projeto",
+    "content_type": [
+      "automation",
+      "project"
+    ],
+    "codename": "add_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Projeto",
+    "content_type": [
+      "automation",
+      "project"
+    ],
+    "codename": "change_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Projeto",
+    "content_type": [
+      "automation",
+      "project"
+    ],
+    "codename": "delete_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Projeto",
+    "content_type": [
+      "automation",
+      "project"
+    ],
+    "codename": "view_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Atividade",
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "codename": "add_activity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Atividade",
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "codename": "change_activity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Atividade",
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "codename": "delete_activity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Atividade",
+    "content_type": [
+      "automation",
+      "activity"
+    ],
+    "codename": "view_activity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Sessão de atividade",
+    "content_type": [
+      "automation",
+      "activitysession"
+    ],
+    "codename": "add_activitysession"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Sessão de atividade",
+    "content_type": [
+      "automation",
+      "activitysession"
+    ],
+    "codename": "change_activitysession"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Sessão de atividade",
+    "content_type": [
+      "automation",
+      "activitysession"
+    ],
+    "codename": "delete_activitysession"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Sessão de atividade",
+    "content_type": [
+      "automation",
+      "activitysession"
+    ],
+    "codename": "view_activitysession"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Atividade Específica",
+    "content_type": [
+      "automation",
+      "specificactivity"
+    ],
+    "codename": "add_specificactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Atividade Específica",
+    "content_type": [
+      "automation",
+      "specificactivity"
+    ],
+    "codename": "change_specificactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Atividade Específica",
+    "content_type": [
+      "automation",
+      "specificactivity"
+    ],
+    "codename": "delete_specificactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Atividade Específica",
+    "content_type": [
+      "automation",
+      "specificactivity"
+    ],
+    "codename": "view_specificactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Expediente",
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "codename": "add_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Expediente",
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "codename": "change_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Expediente",
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "codename": "delete_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Expediente",
+    "content_type": [
+      "automation",
+      "workday"
+    ],
+    "codename": "view_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Atividade Geral",
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "codename": "add_generalactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Atividade Geral",
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "codename": "change_generalactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Atividade Geral",
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "codename": "delete_generalactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Atividade Geral",
+    "content_type": [
+      "epe",
+      "generalactivity"
+    ],
+    "codename": "view_generalactivity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Tamanho do painel",
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "codename": "add_panelsize"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Tamanho do painel",
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "codename": "change_panelsize"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Tamanho do painel",
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "codename": "delete_panelsize"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Tamanho do painel",
+    "content_type": [
+      "epe",
+      "panelsize"
+    ],
+    "codename": "view_panelsize"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Projeto",
+    "content_type": [
+      "epe",
+      "project"
+    ],
+    "codename": "add_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Projeto",
+    "content_type": [
+      "epe",
+      "project"
+    ],
+    "codename": "change_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Projeto",
+    "content_type": [
+      "epe",
+      "project"
+    ],
+    "codename": "delete_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Projeto",
+    "content_type": [
+      "epe",
+      "project"
+    ],
+    "codename": "view_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Expediente",
+    "content_type": [
+      "epe",
+      "workday"
+    ],
+    "codename": "add_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Expediente",
+    "content_type": [
+      "epe",
+      "workday"
+    ],
+    "codename": "change_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Expediente",
+    "content_type": [
+      "epe",
+      "workday"
+    ],
+    "codename": "delete_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Expediente",
+    "content_type": [
+      "epe",
+      "workday"
+    ],
+    "codename": "view_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Atividade",
+    "content_type": [
+      "epe",
+      "activity"
+    ],
+    "codename": "add_activity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Atividade",
+    "content_type": [
+      "epe",
+      "activity"
+    ],
+    "codename": "change_activity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Atividade",
+    "content_type": [
+      "epe",
+      "activity"
+    ],
+    "codename": "delete_activity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Atividade",
+    "content_type": [
+      "epe",
+      "activity"
+    ],
+    "codename": "view_activity"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Sessão de atividade",
+    "content_type": [
+      "epe",
+      "activitysession"
+    ],
+    "codename": "add_activitysession"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Sessão de atividade",
+    "content_type": [
+      "epe",
+      "activitysession"
+    ],
+    "codename": "change_activitysession"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Sessão de atividade",
+    "content_type": [
+      "epe",
+      "activitysession"
+    ],
+    "codename": "delete_activitysession"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Sessão de atividade",
+    "content_type": [
+      "epe",
+      "activitysession"
+    ],
+    "codename": "view_activitysession"
+  }
+}
+]

@@ -1,0 +1,75 @@
+{% extends 'engobras/base.html' %}
+{% block title %}JF Metrics | Tempo Real{% endblock %}
+
+{% block content %}
+  <!-- Cabeçalho -->
+  <div class="mt-6 mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <h1 class="text-xl font-semibold text-slate-800">Tempo Real</h1>
+      <p class="text-sm text-slate-500">Atividades em andamento por colaborador.</p>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <button id="rt-refresh" type="button"
+              class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-slate-50"
+              onclick="htmx.trigger('#rt-board','refresh')">
+        <i data-lucide="refresh-ccw" class="h-4 w-4"></i> Atualizar
+      </button>
+
+      <!-- Toggle do auto-refresh -->
+      <label class="inline-flex items-center gap-2 text-sm text-slate-600">
+        <input id="rt-auto" type="checkbox" class="h-4 w-4 rounded border-slate-300 text-brand focus:ring-brand/30" checked>
+        Auto
+      </label>
+    </div>
+  </div>
+
+  <!-- Quadro em tempo real (preenchido por HTMX) -->
+  <section id="rt-board"
+           hx-get="{% url 'engobras:realtime_fragment' %}"
+           hx-trigger="load, every 3s"
+           hx-swap="outerHTML">
+    {# Fallback inicial (primeiro render no carregamento sem HTMX) #}
+    {% include "realtime/_list.html" %}
+  </section>
+
+  <script>
+    // Liga/desliga o "every 3s" do HTMX
+    (function(){
+      const box = document.getElementById('rt-board');
+      const chk = document.getElementById('rt-auto');
+      function sync(){
+        if (!box) return;
+        if (chk.checked) {
+          box.setAttribute('hx-trigger', 'load, every 3s');
+        } else {
+          box.setAttribute('hx-trigger', 'load');
+        }
+      }
+      if (chk) chk.addEventListener('change', sync);
+      sync();
+    })();
+
+    // Timer local (suave entre os polls)
+    function rtFormat(secs){
+      secs = Math.max(0, Math.floor(secs));
+      const h = Math.floor(secs/3600), m = Math.floor((secs%3600)/60), s = secs%60;
+      return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    }
+    let RT_EPOCH = Date.now();
+    function rtTick(){
+      const delta = Math.floor((Date.now() - RT_EPOCH) / 1000);
+      document.querySelectorAll('[data-rt-base]').forEach(el=>{
+        const base = parseInt(el.getAttribute('data-rt-base')||'0',10);
+        el.textContent = rtFormat(base + delta);
+      });
+    }
+    setInterval(rtTick, 1000);
+    // Quando o HTMX trocar o conteúdo, reseta epoch
+    document.body.addEventListener('htmx:afterSwap', (e)=>{
+      if (e.target && e.target.id === 'rt-board') {
+        RT_EPOCH = Date.now();
+      }
+    });
+  </script>
+{% endblock %}

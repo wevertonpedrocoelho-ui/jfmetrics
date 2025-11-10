@@ -42,3 +42,5 @@ def choose_department_submit(request):
 
     request.session["last_dept_ns"] = d["namespace"]
     return redirect(d["dashboard_urlname"])
+
+

@@ -24,6 +24,14 @@ DEPARTMENTS: List[Dept] = [
         label="Engenharia de Painéis Elétricos",
         dashboard_urlname="epe:dashboard",
     ),
+
+    Dept(
+        namespace="engobras",           
+        slug="engobras",                 
+        label="Engenharia de Obras",     
+        dashboard_urlname="engobras:dashboard", 
+    ),
+
 ]
 
 def get_memberships(user) -> List[dict]:

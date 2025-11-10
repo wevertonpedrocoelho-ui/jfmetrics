@@ -6,12 +6,13 @@ NS_TO_BASE = {
     "automation": "automation/base.html",
     "engauto":    "automation/base.html",   # legado
     "epe":        "epe/base.html",
+    "engobras":   "engobras/base.html", 
 }
 
-# fallback por slug (caso você mude o namespace mas mantenha o slug)
 SLUG_TO_BASE = {
     "automation": "automation/base.html",
     "epe":        "epe/base.html",
+    "engobras":   "engobras/base.html",  
 }
 
 def department_context(request):

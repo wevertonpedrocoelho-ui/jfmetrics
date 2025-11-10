@@ -13,10 +13,14 @@ urlpatterns = [
 
     path("engauto/", include(("automation.urls", "automation"), namespace="engauto")),
     path("epe/",     include(("epe.urls",        "epe"),        namespace="epe")),
+    path("engobras/", include(("engobras.urls", "engobras"), namespace="engobras")),
+
 
     path("after-login/", after_login, name="after_login"),
     path("choose-department/", choose_department_submit, name="choose_department_submit"),
 
     # só a raiz → /engauto/
     path("", RedirectView.as_view(url="/engauto/", permanent=False)),
+
 ]
+

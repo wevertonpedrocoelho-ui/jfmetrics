@@ -1,0 +1,19 @@
+﻿{% load humanize %}
+<div id="row-{{ a.id }}" class="px-4 py-3 grid grid-cols-12 items-center">
+  <div class="col-span-2 truncate">{{ a.project }}</div>
+  <div class="col-span-2 truncate">{{ a.milestone }}</div>
+  <div class="col-span-4 text-sm text-slate-600 truncate">
+    {% for k,v in a.dynamic_data.items %}<span class="inline-flex items-center gap-1 mr-2"><b class="text-slate-800">{{ k }}:</b> {{ v }}</span>{% endfor %}
+  </div>
+  <div class="col-span-2 font-mono">{% with secs=a.total_active_seconds %}{% firstof secs 0 %}s{% endwith %}</div>
+  <div class="col-span-2 flex gap-2">
+    {% if a.is_active %}
+      <form method="post" action="{% url 'engobras:activity_pause' a.id %}">{% csrf_token %}<button class="px-3 py-1.5 rounded-lg border">Pausar</button></form>
+      <form method="post" action="{% url 'engobras:activity_finish' a.id %}">{% csrf_token %}<button class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white">Finalizar</button></form>
+    {% else %}
+      {% if not a.finished_at %}
+        <form method="post" action="{% url 'engobras:activity_resume' a.id %}">{% csrf_token %}<button class="px-3 py-1.5 rounded-lg border">Retomar</button></form>
+      {% else %}<span class="text-slate-400 text-sm">Concluída</span>{% endif %}
+    {% endif %}
+  </div>
+</div>
